@@ -3,7 +3,7 @@ import ResellerLogin from './ResellerLogin';
 import logo from '../assets/logo.png';
 import menuIcon from '../assets/menu.png';
 import cartLogo from '../assets/cartlogo1.png';
-import "../style.css";
+// import "../style.css";
 
 function Navbar({ cartCount, navigateTo }) {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -48,6 +48,10 @@ function Navbar({ cartCount, navigateTo }) {
               <ResellerLogin onClose={() => setShowResellerLogin(false)} />
             )}
           </li>
+          <li className="active" onClick={() => navigateTo('BulkOrder')}>
+          <h3 id="bulk-order" style={{ cursor: 'pointer' }}>Bulk-Order</h3>
+          </li>
+
           <li>
             <input type="text" placeholder="Search..." id="search" />
           </li>
@@ -64,3 +68,4 @@ function Navbar({ cartCount, navigateTo }) {
 }
 
 export default Navbar;
+

@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 
-const ProductDetails = ({ navigateTo }) => {
+const Products = ({ navigateTo }) => {
   const [product, setProduct] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
-      const url = '../cutoutnameslip_data.json';
+      const url = '../nameslip_data.json';
       try {
         const response = await fetch(url);
         if (!response.ok) {
@@ -31,12 +31,11 @@ const ProductDetails = ({ navigateTo }) => {
     loadProductDetails();
   }, []);
 
-  const handlePersonalizeAndAddToCart = () => {
-    if (product) {
-      localStorage.setItem('product', JSON.stringify(product));
-      navigateTo('Template');
-    }
-  };
+  const handlePersonalizeAndAddToCart = (id) => {
+    
+      localStorage.setItem('keyid', id);
+      navigateTo('NSPersonalize');  // Navigate to NSPersonalize view
+    };
   
 
   if (!product) {
@@ -58,7 +57,7 @@ const ProductDetails = ({ navigateTo }) => {
         <br />
         <span>{product.props.join(', ')}</span>
         <br />
-        <button className="P-btn" id="targetbtn" onClick={handlePersonalizeAndAddToCart}>
+        <button className="P-btn" id="targetbtn" onClick={() => handlePersonalizeAndAddToCart(product.id)} >
           Personalize and Add To Cart
         </button>
       </div>
@@ -66,4 +65,4 @@ const ProductDetails = ({ navigateTo }) => {
   );
 };
 
-export default ProductDetails;
+export default Products;
