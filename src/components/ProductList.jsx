@@ -1,3 +1,4 @@
+// ProductList.jsx
 import React, { useEffect, useState } from 'react';
 
 const ProductList = ({ navigateTo }) => {
@@ -11,10 +12,8 @@ const ProductList = ({ navigateTo }) => {
         const response = await fetch('../products.json');
         if (!response.ok) throw new Error('Failed to fetch products');
         const data = await response.json();
+        localStorage.setItem('ProductData', JSON.stringify(data));
         setProducts(data);
-
-        // Render product samples after fetching data
-        renderProductSamples(data);
       } catch (error) {
         console.error('Error fetching product data:', error);
       }
@@ -31,72 +30,28 @@ const ProductList = ({ navigateTo }) => {
 
   // Handle product click
   const handleProductClick = (product) => {
-  const view = product.name.replace(/\s+/g, '');
-  console.log(view);
-  
-  if (view) {
-    navigateTo(view);
-  } else {
-    console.log('Product not found:', product.name);
-  }
-};
-
-
-  // Render product samples dynamically
-  const renderProductSamples = (productData) => {
-    const psample = document.getElementById('productsample');
-  
-    // ✅ Clear existing products to prevent duplicates
-    psample.innerHTML = '';
-  
-    Object.keys(productData).forEach((key) => {
-      const product = productData[key];
-  
-      if (product.status === 1) {
-        // Create product div
-        const prod = document.createElement('div');
-        prod.className = 'sampleprod';
-  
-        // Create sample image
-        const sampleimg = document.createElement('img');
-        sampleimg.src = product.logo;
-        sampleimg.className = 'sampleimg';
-        sampleimg.loading = 'lazy';
-  
-        // Create product name/title
-        const title = document.createElement('h5');
-        title.className = 'sampletitle';
-        title.innerHTML = product.name;
-  
-        // ✅ Add out-of-stock overlay if applicable
-        if (product.outOfStock) {
-          const overlay = document.createElement('div');
-          overlay.className = 'out-of-stock-overlay';
-          overlay.innerHTML = 'Out of Stock';
-  
-          prod.style.pointerEvents = 'none';
-          prod.style.opacity = '0.6';
-  
-          // Append overlay to product
-          prod.appendChild(overlay);
-        }
-  
-        // Append elements
-        prod.appendChild(sampleimg);
-        prod.appendChild(title);
-        prod.onclick = () => handleProductClick(product);
-
-        psample.appendChild(prod);
+    if (product.name === "Cutout Nameslip") {
+      navigateTo('CutOutNameSlip');
+    }
+    else if (product.name === "Name Slips")
+    {
+      navigateTo('Nameslip');
+    }
+    else if (product.name === "Custamizable Bag Tage")
+      {
+        navigateTo('Bagtag');
       }
-    });
+      else if (product.name === "Name Slips"  )
+        {
+          navigateTo('NSPersonalize');
+        }
+    else {
+      alert('Other product clicked!');
+    }
   };
-  
-  
 
   return (
     <div>
-      <div id="productsample"></div>
-
       <h2>Product List</h2>
       <div id="products">
         {Object.keys(products).map((key) => {

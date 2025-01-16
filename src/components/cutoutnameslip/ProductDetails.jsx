@@ -5,7 +5,7 @@ const ProductDetails = ({ navigateTo }) => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const url = '../cutoutnameslip_data.json';
+      const url = '/Cutout.json';
       try {
         const response = await fetch(url);
         if (!response.ok) {
@@ -33,11 +33,9 @@ const ProductDetails = ({ navigateTo }) => {
 
   const handlePersonalizeAndAddToCart = () => {
     if (product) {
-      localStorage.setItem('product', JSON.stringify(product));
-      navigateTo('Template');
+      window.location.href = `${product.template}.html`;
     }
   };
-  
 
   if (!product) {
     return <div>Loading...</div>;
