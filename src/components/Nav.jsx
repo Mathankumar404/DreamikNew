@@ -15,9 +15,17 @@ function Navbar({ cartCount }) {
 
   const handleCartClick = () => {
     // Use navigateTo to switch to the "Order" view or cart-related component
-    navigateTo('Order');  // 'Order' can be a custom component or state that represents your cart
+    navigate('/order');  // 'Order' can be a custom component or state that represents your cart
   };
-
+  const handleResellerClick = () => {
+    if (location.pathname === '/') {
+      // Show the Reseller Login modal only on the root route
+      setShowResellerLogin(true);
+    } else {
+      // Navigate to "Other Products" on non-root routes
+      navigate('/');
+    }
+  };
   return (
     <nav id="header">
       <a href="#" className="logo-section">
@@ -40,11 +48,11 @@ function Navbar({ cartCount }) {
             <h3
               className="active"
               id="reseller"
-              onClick={() => setShowResellerLogin(true)}
+              onClick={handleResellerClick}
             >
-              Reseller Login
+               {location.pathname === '/' ? 'Reseller Login' : 'Other Products'}
             </h3>
-            {showResellerLogin && (
+            {showResellerLogin && location.pathname === '/' && (
               <ResellerLogin onClose={() => setShowResellerLogin(false)} />
             )}
           </li>
