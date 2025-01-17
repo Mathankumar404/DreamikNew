@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const ProductDetails = () => {
   const [product, setProduct] = useState(null);
+  const navigate=useNavigate();
 
   useEffect(() => {
     const fetchData = async () => {
-      const url = '/Cutout.json';
+      const url = '../cutoutnameslip_data.json';
       try {
         const response = await fetch(url);
         if (!response.ok) {
@@ -33,9 +35,11 @@ const ProductDetails = () => {
 
   const handlePersonalizeAndAddToCart = () => {
     if (product) {
-      window.location.href = `${product.template}.html`;
+      localStorage.setItem('product', JSON.stringify(product));
+      navigate('/Template');
     }
   };
+  
 
   if (!product) {
     return <div>Loading...</div>;
@@ -56,7 +60,7 @@ const ProductDetails = () => {
         <br />
         <span>{product.props.join(', ')}</span>
         <br />
-        <button className="P-btn" id="targetbtn" onClick={()=>handlePersonalizeAndAddToCart(product.id)}>
+        <button className="P-btn" id="targetbtn" onClick={handlePersonalizeAndAddToCart}>
           Personalize and Add To Cart
         </button>
       </div>

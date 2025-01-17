@@ -1,31 +1,32 @@
-import React, { useState } from 'react';
+import React, { useContext,useState, useEffect } from 'react';
 import ResellerLogin from './ResellerLogin';
 import logo from '../assets/logo.png';
 import menuIcon from '../assets/menu.png';
 import cartLogo from '../assets/cartlogo1.png';
-import "../style.css";
 import { useNavigate } from 'react-router-dom';
-function Navbar({ cartCount }) {
+import { CartContext } from './CartContext';
+// import "../style.css";
+
+function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  // const [cartCount, setCartCount] = useState(0);
+  const { cartCount,addCart } = useContext(CartContext);
   const [showResellerLogin, setShowResellerLogin] = useState(false);
-   const navigate=useNavigate();
+  const navigate=useNavigate();
+
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
 
   const handleCartClick = () => {
     // Use navigateTo to switch to the "Order" view or cart-related component
-    navigate('/order');  // 'Order' can be a custom component or state that represents your cart
+    navigate('/Order');  // 'Order' can be a custom component or state that represents your cart
   };
-  const handleResellerClick = () => {
-    if (location.pathname === '/') {
-      // Show the Reseller Login modal only on the root route
-      setShowResellerLogin(true);
-    } else {
-      // Navigate to "Other Products" on non-root routes
-      navigate('/');
-    }
-  };
+//  useEffect(() => {
+//     const storedCartCount = JSON.parse(localStorage.getItem('CartCount')) || 0;
+//     setCartCount(storedCartCount);
+//  },[]);
+
   return (
     <nav id="header">
       <a href="#" className="logo-section">
@@ -40,7 +41,7 @@ function Navbar({ cartCount }) {
       <div id="nav" className={menuOpen ? "nav-active" : ""}>
         <ul id="navbar">
           <li>
-            <a href="#" onClick={() => navigate('/')} className="active">
+            <a href="#" onClick={()=>navigate('/')} className="active">
               Go To Shop
             </a>
           </li>
@@ -48,14 +49,18 @@ function Navbar({ cartCount }) {
             <h3
               className="active"
               id="reseller"
-              onClick={handleResellerClick}
+              onClick={() => setShowResellerLogin(true)}
             >
-               {location.pathname === '/' ? 'Reseller Login' : 'Other Products'}
+              Reseller Login
             </h3>
-            {showResellerLogin && location.pathname === '/' && (
+            {showResellerLogin && (
               <ResellerLogin onClose={() => setShowResellerLogin(false)} />
             )}
           </li>
+          <li className="active" onClick={() => navigate('/BulkOrder')}>
+          <h3 id="bulk-order" style={{ cursor: 'pointer' }}>Bulk-Order</h3>
+          </li>
+
           <li>
             <input type="text" placeholder="Search..." id="search" />
           </li>
@@ -72,3 +77,4 @@ function Navbar({ cartCount }) {
 }
 
 export default Navbar;
+
