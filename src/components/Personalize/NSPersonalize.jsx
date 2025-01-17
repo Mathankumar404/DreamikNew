@@ -1,15 +1,14 @@
 import React, { useState, useEffect, useRef } from 'react';
 import html2canvas from 'html2canvas';
-import "../Personalize/NSPersonalize.css"
-import { useParams } from 'react-router-dom';
+import "./NSPersonalize.css"
 import { useNavigate } from 'react-router-dom';
+
 const NSPersonalize = () => {
-  const {id}=useParams();
-  const navigate=useNavigate();
   const persImgContRef = useRef(null);
+  const navigate=useNavigate();
   const [brightness, setBrightness] = useState(100); // Default 100% (no change)
   const [contrast, setContrast] = useState(100); // Default 100% (no change)
-  
+
 
   const [selectedImage, setSelectedImage] = useState(null);
   const [transformations, setTransformations] = useState({
@@ -70,20 +69,20 @@ const NSPersonalize = () => {
     section: "",
     class: "",
   });
-  
-  
-function sendToWhatsApp() {
-  var message = " ";
-  var phoneNumber = "919498088659";
-  var whatsappLink =
-    "https://api.whatsapp.com/send?phone=" +
-    phoneNumber +
-    "&text=" +
-    encodeURIComponent(message);
-  window.location.href = whatsappLink;
-  // window.open() = Window.prototype.open();
-  // window.open(whatsappLink);
-};
+
+  function sendToWhatsApp() {
+    var message = " ";
+    var phoneNumber = "919498088659";
+    var whatsappLink =
+      "https://api.whatsapp.com/send?phone=" +
+      phoneNumber +
+      "&text=" +
+      encodeURIComponent(message);
+    window.location.href = whatsappLink;
+    // window.open() = Window.prototype.open();
+    // window.open(whatsappLink);
+  };
+
   const [studentName, setStudentName] = useState("");
   const [fontSize, setFontSize] = useState(16);
   const [fontColor, setFontColor] = useState("#000000");
@@ -93,7 +92,7 @@ function sendToWhatsApp() {
   // Handle input changes
   useEffect(() => {
         const fetchData = async () => {
-          const url = '/data.json';
+          const url = '/nameslip_data.json';
           try {
             const response = await fetch(url);
             if (!response.ok) {
@@ -148,6 +147,46 @@ function sendToWhatsApp() {
     glossy1.style.transition = ".4s";
     labelstyle = "glossy";
   };
+
+
+
+    //add to the cart
+    const handleAddToCart = async () => {
+      if (persImgContRef.current) {
+        try {
+          // Convert the div to an image using html2canvas
+          const canvas = await html2canvas(persImgContRef.current);
+          const imageData = canvas.toDataURL('image/png'); // Export as a Base64 image
+      
+          // Ensure price and quantity are being passed correctly
+          const productDetails = {
+            image: imageData,  // Base64 image data
+            quantity: quantity,  // User-selected quantity
+            price: product.price * quantity,  // Calculated price for the given quantity
+            Name: product.name,  // Product name
+            labeltype: product.labeltype,  // Example for extra info like label type
+            size: product.size,  // Size information (if needed)
+          };
+    
+          console.log("Product details being added:", productDetails); // Debugging step to check the values
+    
+          // Retrieve existing cart from localStorage
+          const existingCart = JSON.parse(localStorage.getItem('OrderData')) || [];
+    
+          // Push the new product to the cart
+          existingCart.push(productDetails);
+    
+          // Store the updated cart back into localStorage
+          localStorage.setItem('OrderData', JSON.stringify(existingCart));
+          alert('Product added to cart successfully!');
+        } catch (error) {
+          console.error('Error capturing the div:', error);
+        }
+      }
+      navigate('/Order');
+    };
+    
+
   const handleStudentNameChange = (event) => {
     setStudentName(event.target.value);
     console.log(product.id)
@@ -323,19 +362,18 @@ function sendToWhatsApp() {
   };
   return (
     <div className="personalizecontainer">
-      <div className="pers-img-cont" >
-        <div className='stickerdiv' ref={persImgContRef}>
+      <div className="pers-img-cont" ref={persImgContRef}>
+        <div className='stickerdiv'>
         <img
           src={product.source}
           alt="productImage"
+          
           className="personalise-Image"
         />
-        <div id='pers-image-div'>
         <img
           src={selectedImage}
           alt="yours Image"
           style={{
-            
             filter: `brightness(${brightness}%) contrast(${contrast}%)`,
             border: "1px solid #ccc",
             borderRadius: "10px",
@@ -344,7 +382,6 @@ function sendToWhatsApp() {
           }}
           className="personImage"
         />
-        </div>
         </div>
         <label
           className="studentname-lab"
@@ -435,7 +472,6 @@ function sendToWhatsApp() {
             id="select-image"
             onChange={handleImageChange}
             accept="image/*"
-            style={{display:'none'}}
           />
           <div id="customizediv">
             <button className="del-btn" onClick={handleDeleteImage}>
@@ -749,7 +785,7 @@ function sendToWhatsApp() {
               width={"25px"}
               alt=""
               className="custamlogo"
-              onClick={handlehidesection}
+              onclick={handlehidesection}
             />
             </div>
             <div className='img-cus'>
@@ -862,13 +898,17 @@ function sendToWhatsApp() {
             </select>
           </div>
           <div id="quantity">
-            <h3>Quantity</h3>
-            <input type="number" value="1" id="qtn" min="1" 
-             onChange={(e) => setQuantity(Number(e.target.value))}/>
+          Quantity
+            <input
+              type="number"
+              min={1}
+              value={quantity}
+              onChange={handlePrice}
+              style={{ width: "50px" }}
+            />
           </div>
-          
             <br />
-            <button id="add">Add to cart</button>
+            <button id="add" onClick={handleAddToCart}>Add to cart</button>
             <br />
             <label id="ad">Rs.price {product.price * quantity}</label>
             <br />
@@ -884,7 +924,6 @@ function sendToWhatsApp() {
       </button>
         </div>
       </div>
-     
     </div>
   );
 };
