@@ -1,13 +1,16 @@
 import React, { useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
+// import '@fortawesome/fontawesome-free/css/all.min.css';
+
+
 const Nameslip = () => {
- const navigate=useNavigate();
+
   const [products, setProducts] = useState([]);
-  const location = useLocation();
+  const navigate=useNavigate();
+
   useEffect(() => {
     const fetchJSONData = () => {
-      fetch('/data.json')
+      fetch('../nameslip_data.json')
         .then((res) => {
           if (!res.ok) {
             throw new Error(`HTTP error! Status: ${res.status}`);
@@ -31,7 +34,7 @@ const Nameslip = () => {
 
   const handleProductClick = (id) => {
     localStorage.setItem('keyid', id);
-    navigate(`/nsproductdetails/${id}`)  // Navigate to ProductDetails view
+    navigate(`/Products/:${id}`);  // Navigate to ProductDetails view
   };
 
   return (
@@ -40,8 +43,7 @@ const Nameslip = () => {
       <p>Creative and Fun</p>
       <div className="pro-container">
         {products.map((product) => (
-          <div className="pro" key={product.id} onClick={() => handleProductClick(product.id)}  
-           style={product.outOfStock ? { pointerEvents: 'none', opacity: 0.5 } : {}}>
+          <div className="pro" key={product.id} onClick={() => handleProductClick(product.id)}>
             <img src={product.source} alt={product.name} />
             <div className="description">
               <span>DreamiKAI Label</span>
@@ -53,17 +55,15 @@ const Nameslip = () => {
                 <i className="fas fa-star"></i>
                 <i className="fas fa-star"></i>
               </div>
-              <h4>Rs.{product.price}</h4>
+              <h4>₹{product.price}</h4>
             </div>
-            <a href="#" className="cart">
+            <a href="#" className="cart" onClick={()=>{navigate(`/NSPersonalize/:${id}`)}}>
               <i className="fa-solid fa-cart-shopping"></i>
             </a>
           </div>
         ))}
       </div>
-      <button onClick={() => navigate(-1)} style={{ marginBottom: '20px' }}>
-        Go Back to shop
-      </button>
+      
         
     </section>
   );
