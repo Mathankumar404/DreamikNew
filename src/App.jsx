@@ -14,30 +14,33 @@ import Nameslip from './components/Nameslip/Nameslip';
 import Bagtag from './components/Bagtag/Bagtag';
 import NSProductDetails from './components/Nameslip/NSProductDetails';
 import NSPersonalize from './components/Personalize/NSPersonalize';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 function App() {
   const [cartCount, setCartCount] = useState(0);
   const [showResellerLogin, setShowResellerLogin] = useState(false);
-  const [currentView, setCurrentView] = useState('ProductList');
+
 
   // Function to handle navigation between components
-  const navigateTo = (view) => {
-    setCurrentView(view);
-  };
+ 
 
   return (
     <>
-      <Navbar cartCount={cartCount} navigateTo={navigateTo} />
+       <Router>
+      <Navbar cartCount={cartCount} />
       <Advertisement />
-      {currentView === 'ProductList' && <ProductList navigateTo={navigateTo} />}
-      {currentView === 'CutOutNameSlip' && <CutOutNameSlip navigateTo={navigateTo} />}
-      {currentView === 'ProductDetails' && <ProductDetails navigateTo={navigateTo} />}
-      {currentView === 'Nameslip' &&   <Nameslip navigateTo={navigateTo} />}
-      {currentView === 'NSProductDetails' &&   <NSProductDetails navigateTo={navigateTo} />}
-      {currentView === 'Bagtag' &&   <Bagtag navigateTo={navigateTo} />}
-      {currentView === 'NSPersonalize' &&   <NSPersonalize navigateTo={navigateTo} />}
-      {currentView === 'Order' && <Order />} {/* Add Order view here */}
+      <Routes>
+        <Route path="/" element={<ProductList />} />
+        <Route path="/cutoutnameslip" element={<CutOutNameSlip />} />
+        <Route path="/productdetails" element={<ProductDetails />} />
+        <Route path="/Nameslip" element={<Nameslip />} />
+        <Route path="/nsproductdetails/:id" element={<NSProductDetails />} />
+        <Route path="/bagtag" element={<Bagtag />} /> {/* Route for Bagtag */}
+        <Route path="/nspersonalize/:id" element={<NSPersonalize />} />
+        <Route path="/order" element={<Order />} />
+      </Routes>
       <Newsletter />
       <Footer />
+    </Router>
     </>
   );
 }

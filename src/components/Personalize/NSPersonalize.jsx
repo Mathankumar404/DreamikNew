@@ -1,10 +1,15 @@
 import React, { useState, useEffect, useRef } from 'react';
 import html2canvas from 'html2canvas';
 import "../Personalize/NSPersonalize.css"
-const NSPersonalize = ({navigateTo}) => {
+import { useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+const NSPersonalize = () => {
+  const {id}=useParams();
+  const navigate=useNavigate();
   const persImgContRef = useRef(null);
   const [brightness, setBrightness] = useState(100); // Default 100% (no change)
   const [contrast, setContrast] = useState(100); // Default 100% (no change)
+  
 
   const [selectedImage, setSelectedImage] = useState(null);
   const [transformations, setTransformations] = useState({
@@ -65,7 +70,20 @@ const NSPersonalize = ({navigateTo}) => {
     section: "",
     class: "",
   });
-
+  
+  
+function sendToWhatsApp() {
+  var message = " ";
+  var phoneNumber = "919498088659";
+  var whatsappLink =
+    "https://api.whatsapp.com/send?phone=" +
+    phoneNumber +
+    "&text=" +
+    encodeURIComponent(message);
+  window.location.href = whatsappLink;
+  // window.open() = Window.prototype.open();
+  // window.open(whatsappLink);
+};
   const [studentName, setStudentName] = useState("");
   const [fontSize, setFontSize] = useState(16);
   const [fontColor, setFontColor] = useState("#000000");
@@ -100,8 +118,36 @@ const NSPersonalize = ({navigateTo}) => {
   
       loadProductDetails();
     }, []);
-  
-
+    var glossy1=document.getElementById('glossy')
+    var normal1=document.getElementById('normal')
+    var labelstyle = "matte";
+  const normal=()=>{
+    normal1.style.backgroundColor = "#13aa52";
+    normal1.style.color = "#fff";
+    normal1.style.transform = "scale(1.2)";
+    glossy1.style.backgroundColor = "snow";
+    glossy1.style.borderRadius = "0px";
+    normal1.style.borderRadius = "15px";
+    glossy1.style.color = "black";
+    glossy1.style.transform = "scale(1)";
+    normal1.style.transition = ".4s";
+    glossy1.style.transition = ".4s";
+    labelstyle = "matte";
+   
+  };
+  const glossy=()=>{
+    glossy1.style.backgroundColor = "#13aa52";
+    glossy1.style.color = "#fff";
+    glossy1.style.transform = "scale(1.2)";
+    normal1.style.backgroundColor = "snow";
+    normal1.style.borderRadius = "0px";
+    glossy1.style.borderRadius = "15px";
+    normal1.style.color = "black";
+    normal1.style.transform = "scale(1)";
+    normal1.style.transition = ".4s";
+    glossy1.style.transition = ".4s";
+    labelstyle = "glossy";
+  };
   const handleStudentNameChange = (event) => {
     setStudentName(event.target.value);
     console.log(product.id)
@@ -277,18 +323,19 @@ const NSPersonalize = ({navigateTo}) => {
   };
   return (
     <div className="personalizecontainer">
-      <div className="pers-img-cont" ref={persImgContRef}>
-        <div className='stickerdiv'>
+      <div className="pers-img-cont" >
+        <div className='stickerdiv' ref={persImgContRef}>
         <img
           src={product.source}
           alt="productImage"
-          
           className="personalise-Image"
         />
+        <div id='pers-image-div'>
         <img
           src={selectedImage}
           alt="yours Image"
           style={{
+            
             filter: `brightness(${brightness}%) contrast(${contrast}%)`,
             border: "1px solid #ccc",
             borderRadius: "10px",
@@ -297,6 +344,7 @@ const NSPersonalize = ({navigateTo}) => {
           }}
           className="personImage"
         />
+        </div>
         </div>
         <label
           className="studentname-lab"
@@ -387,6 +435,7 @@ const NSPersonalize = ({navigateTo}) => {
             id="select-image"
             onChange={handleImageChange}
             accept="image/*"
+            style={{display:'none'}}
           />
           <div id="customizediv">
             <button className="del-btn" onClick={handleDeleteImage}>
@@ -700,7 +749,7 @@ const NSPersonalize = ({navigateTo}) => {
               width={"25px"}
               alt=""
               className="custamlogo"
-              onclick={handlehidesection}
+              onClick={handlehidesection}
             />
             </div>
             <div className='img-cus'>
@@ -788,14 +837,36 @@ const NSPersonalize = ({navigateTo}) => {
                 <option value="Times New Roman">Times New Roman</option>
               </select>
             </div>
-            Quantity
-            <input
-              type="number"
-              min={1}
-              value={quantity}
-              onChange={handlePrice}
-              style={{ width: "30px" }}
-            />
+            <div id="type">
+            <h3>Type</h3>
+            
+            <button id="normal" onClick={normal} ><h4>Matte</h4></button>
+            <button id="glossy" onClick={glossy} ><h4>Glossy</h4></button>
+            
+          </div>
+          <div id="size">
+            <h3>Size</h3>
+            <select name="" id="selectsize">
+               {/* <option value="small">
+                Small - (100mm * 34 mm) 16 labels - 32nos
+              </option> */}
+              <option value="medium">
+                Medium - (100mm * 44 mm) 12 labels - 36nos
+              </option>
+               {/* <option value="large">
+                Large - (100mm * 58 mm) 10 labels - 40nos
+              </option>
+              <option value="jumbo">
+                Jumbo - (100mm * 68 mm) 8 labels - 48nos
+              </option> -->  */}
+            </select>
+          </div>
+          <div id="quantity">
+            <h3>Quantity</h3>
+            <input type="number" value="1" id="qtn" min="1" 
+             onChange={(e) => setQuantity(Number(e.target.value))}/>
+          </div>
+          
             <br />
             <button id="add">Add to cart</button>
             <br />
@@ -804,9 +875,16 @@ const NSPersonalize = ({navigateTo}) => {
             <button onClick={handleDownload} id="down">
               Download Image
             </button>
+            <button id="whatsapp" onClick={sendToWhatsApp}>
+            For More Than One Image Contact Us in WhatsApp
+          </button>
           </div>
+          <button onClick={() => navigate(-1)} style={{ marginBottom: '20px' }}>
+        Go Back
+      </button>
         </div>
       </div>
+     
     </div>
   );
 };

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-const ProductDetails = ({ navigateTo }) => {
+const ProductDetails = () => {
   const [product, setProduct] = useState(null);
 
   useEffect(() => {
@@ -56,7 +56,7 @@ const ProductDetails = ({ navigateTo }) => {
         <br />
         <span>{product.props.join(', ')}</span>
         <br />
-        <button className="P-btn" id="targetbtn" onClick={handlePersonalizeAndAddToCart}>
+        <button className="P-btn" id="targetbtn" onClick={()=>handlePersonalizeAndAddToCart(product.id)}>
           Personalize and Add To Cart
         </button>
       </div>

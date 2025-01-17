@@ -1,7 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
 import html2canvas from 'html2canvas';
 import "../Bagtag/Bagtag.css"
+import { useLocation } from 'react-router-dom';
+
 const Bagtag = () => {
+  const location = useLocation();
   const [bagTagData, setBagTagData] = useState(null);
   const [photo, setPhoto] = useState(null);
   const [brightness, setBrightness] = useState(100);

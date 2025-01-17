@@ -200,6 +200,8 @@
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  height: fit-content;
+  
 }
 
 /* Product and selected image styling */
@@ -212,8 +214,9 @@
 
 .personImage {
   position: absolute;
-  top: 20%;
-  left: 10%;
+  top: 40%;
+  left: 5%;
+  overflow: hidden;
   transform: translate(-50%, -50%);
   max-width: 80%;
   max-height: 80%;
@@ -410,9 +413,8 @@ input[type="number"] {
     height:50%;
     position:static;
     margin-top: 20%;
-    
-
-
+   
+  
 }
 /* Prevent one div from affecting the other */
 .personalizecontainer {
@@ -438,4 +440,15 @@ input[type="number"] {
     align-self: flex-start; /* Keeps the control container aligned at the top */
     overflow: auto; /* Add scrolling if content exceeds height */
   }
+  
+  
+
+
+
+
+
+
+
+
+
   

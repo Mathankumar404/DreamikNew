@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
-const Nameslip = ({ navigateTo }) => {
-
+import { useLocation } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+const Nameslip = () => {
+ const navigate=useNavigate();
   const [products, setProducts] = useState([]);
-
+  const location = useLocation();
   useEffect(() => {
     const fetchJSONData = () => {
       fetch('/data.json')
@@ -29,7 +31,7 @@ const Nameslip = ({ navigateTo }) => {
 
   const handleProductClick = (id) => {
     localStorage.setItem('keyid', id);
-    navigateTo('NSProductDetails');  // Navigate to ProductDetails view
+    navigate(`/nsproductdetails/${id}`)  // Navigate to ProductDetails view
   };
 
   return (
@@ -38,7 +40,8 @@ const Nameslip = ({ navigateTo }) => {
       <p>Creative and Fun</p>
       <div className="pro-container">
         {products.map((product) => (
-          <div className="pro" key={product.id} onClick={() => handleProductClick(product.id)}>
+          <div className="pro" key={product.id} onClick={() => handleProductClick(product.id)}  
+           style={product.outOfStock ? { pointerEvents: 'none', opacity: 0.5 } : {}}>
             <img src={product.source} alt={product.name} />
             <div className="description">
               <span>DreamiKAI Label</span>
@@ -58,7 +61,9 @@ const Nameslip = ({ navigateTo }) => {
           </div>
         ))}
       </div>
-      
+      <button onClick={() => navigate(-1)} style={{ marginBottom: '20px' }}>
+        Go Back to shop
+      </button>
         
     </section>
   );

@@ -1,10 +1,10 @@
 // ProductList.jsx
 import React, { useEffect, useState } from 'react';
-
-const ProductList = ({ navigateTo }) => {
+import { useNavigate } from 'react-router-dom';
+const ProductList = () => {
   const [products, setProducts] = useState([]);
   const [orderData, setOrderData] = useState([]);
-
+  const navigate = useNavigate();
   // Fetch product data
   useEffect(() => {
     const fetchProductData = async () => {
@@ -31,20 +31,17 @@ const ProductList = ({ navigateTo }) => {
   // Handle product click
   const handleProductClick = (product) => {
     if (product.name === "Cutout Nameslip") {
-      navigateTo('CutOutNameSlip');
+      navigate('/CutOutNameSlip');
     }
     else if (product.name === "Name Slips")
     {
-      navigateTo('Nameslip');
+      navigate('/Nameslip');
     }
     else if (product.name === "Custamizable Bag Tage")
       {
-        navigateTo('Bagtag');
+       navigate('/bagtag');
       }
-      else if (product.name === "Name Slips"  )
-        {
-          navigateTo('NSPersonalize');
-        }
+     
     else {
       alert('Other product clicked!');
     }

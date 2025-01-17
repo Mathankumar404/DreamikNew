@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
-
-const NSProductDetails = ({ navigateTo }) => {
+import { useNavigate,useParams } from 'react-router-dom';
+const NSProductDetails = () => {
   const [product, setProduct] = useState(null);
-
+  const navigate=useNavigate();
+  const { id } = useParams();
   useEffect(() => {
     const fetchData = async () => {
       const url = '/data.json';
@@ -21,26 +22,28 @@ const NSProductDetails = ({ navigateTo }) => {
 
     const loadProductDetails = async () => {
       const data = await fetchData();
-      const key = localStorage.getItem('keyid');
-      if (key && data[key]) {
-        setProduct(data[key]);
-        document.title = data[key].name;
+      if (data && id && data[id]) {
+        setProduct(data[id]);
+        document.title = data[id].name; // Update document title to the product name
+      } else {
+        console.warn('Product not found');
       }
     };
 
     loadProductDetails();
-  }, []);
+  }, [id]);
 
   const handlePersonalizeAndAddToCart = (id) => {
     
-      localStorage.setItem('keyid', id);
-      navigateTo('NSPersonalize');  // Navigate to NSPersonalize view
-    };
-  
-
+    if (id) {
+      localStorage.setItem('keyid', id); // Store the current product ID in localStorage
+      navigate(`/nspersonalize/${id}`); // Navigate to the NSPersonalize route
+    }
+  };
   if (!product) {
     return <div>Loading...</div>;
   }
+  
 
   return (
     <section id="prodetails" className="section-p1">
@@ -55,12 +58,16 @@ const NSProductDetails = ({ navigateTo }) => {
         <h4>Product Details</h4>
         <span>{product.name}</span>
         <br />
-        <span>{product.props.join(', ')}</span>
+        {product.props && <span>{product.props.join(', ')}</span>}
+
         <br />
         <button className="P-btn" id="targetbtn" onClick={() => handlePersonalizeAndAddToCart(product.id)} >
           Personalize and Add To Cart
         </button>
       </div>
+      <button onClick={() => navigate(-1)} style={{ marginBottom: '20px' }}>
+        Go Back
+      </button>
     </section>
   );
 };
