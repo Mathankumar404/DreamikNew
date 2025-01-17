@@ -1,5 +1,8 @@
+
 @import url("https://fonts.googleapis.com/css2?family=Spartan:wght@100..900&display=swap");
 * {
+
+  
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -23,11 +26,24 @@ h6 {
   font-weight: 700;
   font-size: 12px;
 }
-p {
-  font-size: 16px;
-  color: black;
-  margin: 15px 0 20px 0;
+
+.contact-info {
+  font-family: Arial, sans-serif;
+  font-weight: 350;
+  line-height: 1.6;
+  color: #000000;
+  text-align: left;
 }
+
+.contact-info p {
+  margin: 0 0 10px;
+}
+
+.contact-info .indent {
+  display: block;
+  text-indent: 5.2em;
+}
+
 .section-p1 {
   padding: 40px 80px;
 }
@@ -288,78 +304,116 @@ a {
         width: 200px;
     }
  } */
-footer {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
+ 
+ /* Footer Section */
+ footer {
+   background-color: #c5d6e9;
+   font-size: 14px;
+   color: rgb(255, 255, 255);
+   padding: 40px 80px;
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+   gap: 30px;
+ }
+ 
+ footer .logo {
+  margin-bottom: 5px;
+} 
+
+.logo-section{
+   margin-left: 1;
+
 }
-.col1,
 .col2,
 .col3 {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  margin-bottom: 20px;
+  align-items:baseline;
+  margin-bottom: 10px;
+
 }
-footer .logo {
-  margin-bottom: 30px;
-}
-footer h3 {
-  padding-bottom: 20px;
-}
-footer p {
-  font-size: 20px;
-  margin: 0 0 20px 0;
-}
-footer a {
-  font-style: 20px;
-  text-decoration: none;
-  margin: 0 0 20px 0;
-  color: #222;
-}
-footer .follow {
-  margin-top: 20px;
+ footer h3 {
+   color: #000000;
+   font-size: 18px;
+   margin-bottom: 15px;
+   
+ }
+ 
+ footer a {
+   text-decoration: none;
+   color: rgb(56, 55, 55);
+   font-size: 14px;
+   margin-bottom: 10px;
+   transition: color 0.3s ease;
+ }
+ 
+ footer a:hover {
+   color: #1b345f;
+   font-size: 105%;
+ }
+ 
+ footer .icons {
+   display: flex;
+   gap: 15px;
+ }
+ 
+ footer .icons a,
+ footer .col-install a{
+ 
+   background-color: #444;
+   color: white;
+   width: 40px;
+   height: 40px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   border-radius: 50%;
+   transition: background-color 0.3s ease, transform 0.3s ease;
+ }
+ 
+ footer .icons a:hover ,
+ footer .col-install a:hover{
+   background-color: #1b345f;
+   transform: scale(1.1);
+ }
+
+.icons{
+  display: flex;
+  justify-content: center;
+  gap: 10px;
 }
 
-footer .follow i {
-  padding-top: 10px;
-  color: rgb(51, 32, 126);
-  padding-right: 4px;
-  cursor: pointer;
-}
-footer .install button {
-  margin-bottom: 20px;
-  background-color: black;
-  border: none;
-  outline: none;
-  padding: 5px 10px;
-  color: white;
-  width: 150px;
-  font-size: 14px;
-  border-radius: 10px;
-}
-footer ul {
-  display: flex;
-  padding-left: 10px;
-}
-footer li {
-  background-color: black;
-  padding: 10px 15px;
-  color: white;
-  border-radius: 10px;
-  margin-left: 5px;
-}
-.f-2 {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-footer .col a h2 {
-  font-size: 26px;
-}
+/* Sub-Footer */
+  footer.f-2 {
+    background-color: #1b345f;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 12px;
+    color: #ffffff;
+  }  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    footer {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+  
+    footer .logo-section {
+      justify-content: center;
+    }
+  
+    footer .icons {
+      justify-content: center;
+      gap: 5px;
+      flex-wrap: wrap;
+    }
+  }
+
 #product-1 {
   text-align: center;
+  padding: 20px 80px;
+  margin-bottom: 40px;
+
 }
 #product-1 .pro-container {
   display: flex;
@@ -367,7 +421,7 @@ footer .col a h2 {
   gap: 2vw;
   padding-top: 20px;
   flex-wrap: wrap;
-  background-color: #ebf2fc;
+  /* background-color: #ebf2fc; */
   padding: 20px;
 }
 #product-1 .pro {
@@ -375,16 +429,17 @@ footer .col a h2 {
   min-width: 250px;
   padding: 10px 12px;
   border: 1px solid #cce7d0;
-  border-radius: 25px;
+  border-radius: 20px;
   cursor: pointer;
   box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.02);
   margin: 15px 0;
   transition: 0.2s ease;
   position: relative;
-  background-color: white;
+  background-color: #c7edce;
 }
 #product-1 .pro:hover {
-  box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.06);
+  box-shadow: 20px 20px 20px #2f5335;
+  transform: scale(1.05);
 }
 #product-1 .pro img {
   width: 100%;
@@ -396,22 +451,26 @@ footer .col a h2 {
 }
 #product-1 .pro .description span {
   color: #606063;
-  font-size: 14px;
+  font-size: 12px;
 }
 #product-1 .pro .description h5 {
   padding-top: 10px;
-  color: #1a1a1a;
-  font-size: 18px;
+  color: #4d4b4b;
+  font-size: 13px;
+  font-weight: 700;
 }
 #product-1 .pro .description i {
-  font-size: 14px;
-  color: rgb(243, 181, 25);
+  font-size: 11px;
+  color: rgb(255, 209, 93);
 }
+
+
 #product-1 .pro .description h4 {
   padding-top: 7px;
   font-size: 16px;
-  font-weight: 700;
-  color: rgb(51, 32, 126);
+  font-weight: 600;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: rgb(220, 39, 39);
 }
 #product-1 .pro a i {
   width: 40px;
@@ -423,8 +482,8 @@ footer .col a h2 {
   color: rgb(51, 32, 126);
   border: 1px solid #cce7d0;
   position: absolute;
-  bottom: 20px;
-  right: 10px;
+  bottom: 16px;
+  right: 14px;
 }
 #pagination {
   text-align: center;
@@ -455,7 +514,7 @@ footer .col a h2 {
 }
 #prodetails .single-pro-image {
   width: 40%;
-  margin-right: 50px;
+  margin-right: 60px;
 }
 #prodetails {
   margin-right: 0px;
@@ -472,10 +531,14 @@ footer .col a h2 {
   width: 50%;
 }
 #prodetails .single-pro-details h4 {
-  padding: 40px 0 20px 0;
+  padding: 20px 0 20px 0;
 }
 #prodetails .single-pro-details h2 {
-  font-size: 26px;
+  padding-top: 7px;
+  font-size: 30px;
+  font-weight: 600;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: rgb(220, 39, 39);
 }
 #prodetails .single-pro-details select {
   display: block;
@@ -509,14 +572,16 @@ footer .col a h2 {
 .P-btn {
   width: 300px;
   height: 55px;
-  background-color: rgb(51, 32, 126);
-  border: none;
-  outline: none;
+  background-color: #1b345f;
   padding: 10px 15px;
   color: white;
-  font-size: 16px;
-  border-radius: 32px;
+  font-size: 11px;
+  border-radius: 31px;
   font-weight: bold;
+}
+.P-btn:hover {
+  background-color: #9eb7e2;
+  color: #000000;
 }
 #properties {
   width: 100%;
