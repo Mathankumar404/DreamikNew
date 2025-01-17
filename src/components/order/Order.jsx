@@ -181,24 +181,70 @@ const Order = () => {
           </div>
         </div>
 
+       
         <div id="form-container">
-          <h2 className="topic">Delivery Details</h2>
-        <div id="address-form">
-          <label htmlFor="name">Name: <span className="astrics">*</span></label>
-          <input type="text" id="name" name="name" required />
-          <label htmlFor="email">Email:</label>
-          <input type="email" id="email" name="email" required />
-          <label htmlFor="phone">Phone Number: <span className="astrics">*</span></label>
-          <input type="tel" id="phone" name="phone" required />
-          <label htmlFor="address1">Address Line 1: <span className="astrics">*</span></label>
-          <input type="text" id="address1" name="address1" required />
-          <label htmlFor="pincode">Pincode: <span className="astrics">*</span></label>
-          <input type="text" id="pincode" name="pincode" maxLength="6" required />
-          <button id="proceedtopay" onClick={handleProceedToPayment}>
-            Proceed To Payment
-          </button>
-        </div>
-      </div>
+  <h2 className="topic">Delivery Details</h2>
+  <form
+    id="address-form"
+    onSubmit={(e) => {
+      e.preventDefault(); // Prevent form's default submission behavior
+      const form = e.target;
+
+      // Validate required fields
+      const name = form.name.value.trim();
+      const email = form.email.value.trim();
+      const phone = form.phone.value.trim();
+      const address1 = form.address1.value.trim();
+      const pincode = form.pincode.value.trim();
+
+      if (!name || !phone || !address1 || !pincode) {
+        alert("Please fill in all required fields!");
+        return;
+      }
+
+      if (phone.length !== 10 || !/^\d+$/.test(phone)) {
+        alert("Please enter a valid 10-digit phone number!");
+        return;
+      }
+
+      if (pincode.length !== 6 || !/^\d+$/.test(pincode)) {
+        alert("Please enter a valid 6-digit pincode!");
+        return;
+      }
+
+      // Proceed to payment
+      handleProceedToPayment();
+    }}
+  >
+    <label htmlFor="name">
+      Name: <span className="astrics">*</span>
+    </label>
+    <input type="text" id="name" name="name" required />
+
+    <label htmlFor="email">Email:</label>
+    <input type="email" id="email" name="email" required />
+
+    <label htmlFor="phone">
+      Phone Number: <span className="astrics">*</span>
+    </label>
+    <input type="tel" id="phone" name="phone" maxLength="10" required />
+
+    <label htmlFor="address1">
+      Address Line 1: <span className="astrics">*</span>
+    </label>
+    <input type="text" id="address1" name="address1" required />
+
+    <label htmlFor="pincode">
+      Pincode: <span className="astrics">*</span>
+    </label>
+    <input type="text" id="pincode" name="pincode" maxLength="6" required />
+
+    <button id="proceedtopay" type="submit">
+      Proceed To Payment
+    </button>
+  </form>
+</div>
+
 
       </div>
     </div>
