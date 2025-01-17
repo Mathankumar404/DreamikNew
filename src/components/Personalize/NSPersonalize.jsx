@@ -1,14 +1,15 @@
-import React, { useState, useEffect, useRef } from 'react';
-import html2canvas from 'html2canvas';
+import React, { useContext,useState, useEffect, useRef } from 'react';
+// import html2canvas from 'html2canvas';
 import "./NSPersonalize.css"
 import { useNavigate } from 'react-router-dom';
+import { CartContext } from '../CartContext';
 
 const NSPersonalize = () => {
   const persImgContRef = useRef(null);
   const navigate=useNavigate();
   const [brightness, setBrightness] = useState(100); // Default 100% (no change)
   const [contrast, setContrast] = useState(100); // Default 100% (no change)
-
+  const { addToCart, cartCount } = useContext(CartContext);
 
   const [selectedImage, setSelectedImage] = useState(null);
   const [transformations, setTransformations] = useState({
@@ -89,6 +90,13 @@ const NSPersonalize = () => {
   const [fontFamily, setFontFamily] = useState("Arial");
   const [quantity, setQuantity] = useState(1);
   const [product,setProduct]=useState({});
+
+  // const [cartCount, setCartCount] = useState(0);
+
+  // useEffect(() => {
+  //   const storedCartCount = JSON.parse(localStorage.getItem('CartCount')) || 0;
+  //   setCartCount(storedCartCount);
+  // }, []);
   // Handle input changes
   useEffect(() => {
         const fetchData = async () => {
@@ -155,7 +163,7 @@ const NSPersonalize = () => {
       if (persImgContRef.current) {
         try {
           // Convert the div to an image using html2canvas
-          const canvas = await html2canvas(persImgContRef.current);
+          const canvas = await window.html2canvas(persImgContRef.current);
           const imageData = canvas.toDataURL('image/png'); // Export as a Base64 image
       
           // Ensure price and quantity are being passed correctly
@@ -178,6 +186,13 @@ const NSPersonalize = () => {
     
           // Store the updated cart back into localStorage
           localStorage.setItem('OrderData', JSON.stringify(existingCart));
+
+          // Update cart count
+          addToCart();
+        // const newCartCount = cartCount + 1;
+        // setCartCount(newCartCount);
+        // localStorage.setItem('CartCount', newCartCount);
+
           alert('Product added to cart successfully!');
         } catch (error) {
           console.error('Error capturing the div:', error);
@@ -282,7 +297,7 @@ const NSPersonalize = () => {
       return;
     }
 
-    html2canvas(element)
+    window.html2canvas(element)
       .then((canvas) => {
         const imgData = canvas.toDataURL("image/png");
         const link = document.createElement("a");
@@ -362,7 +377,8 @@ const NSPersonalize = () => {
   };
   return (
     <div className="personalizecontainer">
-      <div className="pers-img-cont" ref={persImgContRef}>
+      <div className="pers-img-cont" >
+        <div ref={persImgContRef}>
         <div className='stickerdiv'>
         <img
           src={product.source}
@@ -458,11 +474,12 @@ const NSPersonalize = () => {
           {studentDetails.class}
         </label>
       </div>
-      
+      Medium - (100mm * 44 mm) 12 labels - 36nos
+      </div>
       <div className="controllize-container">
         <div id="buttonscontrol">
           <label htmlFor="select-image" id="sel-img-btn">
-            select image
+            Select Your image
           </label>
           <button id="editImage" onClick={handlecustomImage}>
             <img src="/image/custamize.png" width={"25px"} alt="" />
@@ -595,6 +612,7 @@ const NSPersonalize = () => {
             onClick={handlehidename}
             className="custamlogo"
           />
+          <br />
           <input
             type="text"
             name="schoolName"
@@ -642,6 +660,7 @@ const NSPersonalize = () => {
             onClick={handlehideschoolname}
             className="custamlogo"
           />
+          <br />
           <button id="otherdetails" onClick={handleotherDetails}>
             Other Details
           </button>
@@ -785,7 +804,7 @@ const NSPersonalize = () => {
               width={"25px"}
               alt=""
               className="custamlogo"
-              onclick={handlehidesection}
+              onClick={handlehidesection}
             />
             </div>
             <div className='img-cus'>
@@ -854,8 +873,8 @@ const NSPersonalize = () => {
               </button>
             </div>
             {/* Customize Font Color */}
-            <div>
-              <label>Pick Font Color: </label>
+            <div id='font-color'> 
+              Pick Font Color: 
               <input
                 type="color"
                 value={fontColor}
@@ -863,7 +882,7 @@ const NSPersonalize = () => {
               />
             </div>
             {/* Customize Font Family */}
-            <div>
+            <div id='font-family'>
               <label>Font Family: </label>
               <select onChange={handleFontFamilyChange} value={fontFamily}>
                 <option value="Arial">Arial</option>
@@ -873,15 +892,17 @@ const NSPersonalize = () => {
                 <option value="Times New Roman">Times New Roman</option>
               </select>
             </div>
+            <br />
             <div id="type">
             <h3>Type</h3>
-            
+            <br />
             <button id="normal" onClick={normal} ><h4>Matte</h4></button>
             <button id="glossy" onClick={glossy} ><h4>Glossy</h4></button>
             
           </div>
           <div id="size">
             <h3>Size</h3>
+            <br />
             <select name="" id="selectsize">
                {/* <option value="small">
                 Small - (100mm * 34 mm) 16 labels - 32nos
@@ -907,17 +928,17 @@ const NSPersonalize = () => {
               style={{ width: "50px" }}
             />
           </div>
+            <label id="price">Rs.price {product.price * quantity}</label>
             <br />
             <button id="add" onClick={handleAddToCart}>Add to cart</button>
             <br />
-            <label id="ad">Rs.price {product.price * quantity}</label>
-            <br />
-            <button onClick={handleDownload} id="down">
-              Download Image
-            </button>
+            
             <button id="whatsapp" onClick={sendToWhatsApp}>
-            For More Than One Image Contact Us in WhatsApp
-          </button>
+            <i className='fa-brands fa-whatsapp' id='whatsapp-icon'></i> For More Than One Image Contact Us in WhatsApp
+          </button><br />
+          <button onClick={handleDownload} id="down">
+              Download Image
+            </button> <br />
           </div>
           <button onClick={() => navigate(-1)} style={{ marginBottom: '20px' }}>
         Go Back

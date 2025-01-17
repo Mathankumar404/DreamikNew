@@ -1,199 +1,14 @@
 /* Container for the main personalize section */
 .personalizecontainer {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 20px;
-    gap: 20px;
-    
-  }
-  
-  /* Image container styles */
-  .pers-img-cont {
-    flex: 1;
-    position: relative;
-    bottom: 10%;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Product and selected image styling */
-  .personalise-Image {
-    width: 100%;
-    height: fit-content;
-    object-fit: cover;
-  }
-  
-  .personImage {
-    position: static;
-    top: 10%;
-    left: 4%;
-    width: 20%;
-    height:38%;
-    transform: translate(-50%, -50%);
-   max-width: 50%;
-   max-height: 50%;
-  }
-  
-  /* Labels for student details */
-  .studentname-lab,
-  .schoolname-lab,
-  .subjectname-lab,
-  .rollnu-lab,
-  .sectionname-lab,
-  .classname-lab {
-    position: absolute;
-    
-    text-align: center;
-    font-weight: bold;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-  }
- 
-  /* Controls container */
-  .controllize-container {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-  
-  /* Control buttons and inputs */
-  #buttonscontrol {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-  }
-  
-  #sel-img-btn,
-  .zoom-in,
-  .zoom-out,
-  .del-btn,
-  button {
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    background-color: #007bff;
-    color: #fff;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  #sel-img-btn:hover,
-  .zoom-in:hover,
-  .zoom-out:hover,
-  .del-btn:hover,
-  button:hover {
-    background-color: #0056b3;
-  }
-  
-  /* Range sliders for brightness and contrast */
-  input[type="range"] {
-    width: 100%;
-    appearance: none;
-    background-color: #ddd;
-    height: 5px;
-    border-radius: 5px;
-    outline: none;
-  }
-  
-  /* Student details input fields */
-  .student-details input {
-    width: calc(100% - 20px);
-    margin: 10px 0;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 14px;
-  }
-  
-  /* Font customization section */
-  #fontcenter {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-  
-  .fontsizebtn {
-    padding: 5px 10px;
-    font-size: 14px;
-    border-radius: 5px;
-    background-color: #28a745;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-  }
-  
-  .fontsizebtn:hover {
-    background-color: #218838;
-  }
-  
-  /* Customize and details toggles */
-  #customizediv,
-  #namecustomizediv,
-  #schoolnamecustomizediv,
-  #sectioncustomizediv,
-  #subjectcustomizediv,
-  #classcustomizediv,
-  #rollcustomizediv,
-  #OD {
-    display: none;
-    padding: 10px;
-    background-color: #f8f9fa;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    margin-top: 10px;
-  }
-  
-  /* Quantity input */
-  input[type="number"] {
-    width: 50px;
-    text-align: center;
-    padding: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  /* Add to cart and download buttons */
-  #add,
-  #down {
-    width: 100%;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    background-color: #17a2b8;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-    text-align: center;
-  }
-  
-  #add:hover,
-  #down:hover {
-    background-color: #117a8b;
-  }
-  
-  /* Price label */
-  #ad {
-    display: block;
-    margin: 10px 0;
-    font-size: 18px;
-    font-weight: bold;
-    color: #333;
-    text-align: center;
-  }
-  /* Container for the main personalize section */
-.personalizecontainer {
   display: flex;
   flex-direction: row;
   justify-content:space-between;
   padding: 20px;
   gap: 20px;
-}
-
-/* Image container styles */
-.pers-img-cont {
+  }
+  
+  /* Image container styles */
+  .pers-img-cont {
   flex: 1;
   position: relative;
   border: 1px solid #ddd;
@@ -202,17 +17,17 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   height: fit-content;
   
-}
-
-/* Product and selected image styling */
-.personalise-Image {
+  }
+  
+  /* Product and selected image styling */
+  .personalise-Image {
   width: 100%;
   height: auto;
   object-fit: cover;
     
-}
-
-.personImage {
+  }
+  
+  .personImage {
   position: absolute;
   top: 40%;
   left: 5%;
@@ -220,72 +35,72 @@
   transform: translate(-50%, -50%);
   max-width: 80%;
   max-height: 80%;
-}
+  }
 
 /* Labels for student details */
 .studentname-lab {
   position: absolute;
    /* Adjusted for perfect placement */
-   /* Adjusted for perfect placement */
   text-align: center;
   font-weight: bold;
   top: 40%;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-}
-
-.schoolname-lab {
+  }
+  
+  .schoolname-lab {
   position: absolute;
   top: 80%; /* Adjusted for perfect placement */
   left: 60%; /* Adjusted for perfect placement */
   text-align: center;
   font-weight: bold;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-}
-
-.subjectname-lab {
+  }
+  
+  .subjectname-lab {
   position: absolute;
   top: 70%; /* Adjusted for perfect placement */
   left: 60%; /* Adjusted for perfect placement */
   text-align: center;
   font-weight: bold;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-}
-
-.rollnu-lab {
+  }
+  
+  .rollnu-lab {
   position: absolute;
   top: 60%; /* Adjusted for perfect placement */
   left: 60%; /* Adjusted for perfect placement */
   text-align: center;
   font-weight: bold;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-}
-
-.sectionname-lab {
+  }
+  
+  .sectionname-lab {
   position: absolute;
   top: 50%; /* Adjusted for perfect placement */
   left: 80%; /* Adjusted for perfect placement */
   text-align: center;
   font-weight: bold;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-}
-
-.classname-lab {
+  }
+  
+  .classname-lab {
   position: absolute;
   top: 50%; /* Adjusted for perfect placement */
   left: 50%; /* Adjusted for perfect placement */
   text-align: center;
   font-weight: bold;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-}
+  }
 
 /* Controls container */
 .controllize-container {
-  /* flex: 1; */
+  flex: 1;
   display: flex;
-  align-self: flex-start; /* Keeps the control container aligned at the top */
-  overflow: auto;
-  
+  flex-direction: column;
   gap: 20px;
+  background-color: #ddd;
+  border: 1px solid rgba(0, 0, 0, 0.233);
+  padding: 10px;
 }
 
 /* Control buttons and inputs */
@@ -293,48 +108,6 @@
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-}
-
-#sel-img-btn,
-.zoom-in,
-.zoom-out,
-.del-btn,
-button {
-  padding: 10px 15px;
-  border: none;
-  border-radius: 5px;
-  background-color: #007bff;
-  color: #fff;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-#sel-img-btn:hover,
-.zoom-in:hover,
-.zoom-out:hover,
-.del-btn:hover,
-button:hover {
-  background-color: #0056b3;
-}
-
-/* Range sliders for brightness and contrast */
-input[type="range"] {
-  width: 100%;
-  appearance: none;
-  background-color: #ddd;
-  height: 5px;
-  border-radius: 5px;
-  outline: none;
-}
-
-/* Student details input fields */
-.student-details input {
-  width: calc(100% - 20px);
-  margin: 10px 0;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 14px;
 }
 
 /* Font customization section */
@@ -362,86 +135,232 @@ input[type="range"] {
 #customizediv,
 #namecustomizediv,
 #schoolnamecustomizediv,
+#sectioncustomizediv,
+#subjectcustomizediv,
+#classcustomizediv,
+#rollcustomizediv,
 #OD {
-  
-  padding: 10px;
+  display: none;
+  padding: 20px;
   background-color: #f8f9fa;
   border: 1px solid #ddd;
   border-radius: 5px;
   margin-top: 10px;
 }
 
+
+#sel-img-btn,
+.zoom-in,
+.zoom-out,
+.del-btn,
+button {
+padding: 10px 15px;
+border: none;
+border-radius: 5px;
+background-color: #007bff;
+color: #fff;
+cursor: pointer;
+margin: 10px;
+transition: background-color 0.3s;
+}
+
+#sel-img-btn:hover,
+.zoom-in:hover,
+.zoom-out:hover,
+.del-btn:hover,
+button:hover {
+background-color: #0056b3;
+}
+
+/* Range sliders for brightness and contrast */
+input[type="range"] {
+width: 100%;
+appearance: none;
+background-color: #ddd;
+height: 5px;
+border-radius: 5px;
+outline: none;
+}
+
+/* Student details input fields */
+.student-details input {
+width: 50%;
+margin: 10px 0;
+padding: 10px;
+border: 1px solid #ccc;
+border-radius: 5px;
+font-size: 14px;
+}
+
+/* Font customization section */
+#fontcenter {
+display: flex;
+flex-direction: column;
+gap: 10px;
+}
+
+.fontsizebtn {
+padding: 10px 10px;
+font-size: 14px;
+border-radius: 5px;
+background-color: #2894a7;
+color: #fff;
+border: none;
+cursor: pointer;
+margin: 10px 10px;
+}
+
+.fontsizebtn:hover {
+background-color: #14669c;
+}
+
+/* Customize and details toggles */
+#customizediv,
+#namecustomizediv,
+#schoolnamecustomizediv,
+#OD {
+
+padding: 10px;
+background-color: #f8f9fa;
+border: 1px solid #ddd;
+border-radius: 5px;
+margin-top: 10px;
+}
+#font-color
+{
+  width: 20%;
+  align-self: center;
+  color: #0056b3;
+  font-weight: 600;
+}
+#font-family
+{
+  color: #0056b3;
+  font-weight: 600;
+}
+
+#type button
+{
+    width: 20%;
+    background-color: #ccc;
+    padding: auto;
+}
+
+#size
+{
+  padding: 7px;
+}
+#size select
+{
+ padding: 10px; 
+}
+
+#quantity
+{
+  padding: 5px 30px;
+  color: #0056b3;
+  font-weight: 600;
+  font-size: larger;
+}
+
 /* Quantity input */
 input[type="number"] {
-  width: 50px;
-  text-align: center;
-  padding: 5px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+width: 100px;
+text-align: center;
+padding: 10px;
+border: 1px solid #ccc;
+border-radius: 5px;
+margin: 0 7px;
+font-weight: 600;
 }
 
 /* Add to cart and download buttons */
-#add,
-#down {
-  width: 100%;
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  background-color: #17a2b8;
-  color: white;
-  font-size: 16px;
-  cursor: pointer;
-  text-align: center;
+#add,#down
+ {
+width: 50%;
+padding: 10px;
+border: none;
+border-radius: 5px;
+background-color: #17b83a;
+color: white;
+font-size: 16px;
+font-weight: 800;
+cursor: pointer;
+text-align: center;
+align-self: center;
 }
-
+#down
+{
+  background-color: #0056b3;
+}
 #add:hover,
 #down:hover {
-  background-color: #117a8b;
+background-color: #000000;
+color: #17b83a;
+letter-spacing: 2px;
+border-radius: 30px;
 }
 
+#whatsapp
+{
+  width: 70%;
+  align-self: center;
+  background-color: #0c0505;
+  font-size: medium;
+  font-weight: 600;
+}
+#whatsapp-icon
+{
+  font-weight: 600;
+  font-size: 20px;
+  padding: 5px;
+  color: #17b83a;
+}
 /* Price label */
-#ad {
-  display: block;
-  margin: 10px 0;
-  font-size: 18px;
-  font-weight: bold;
-  color: #333;
-  text-align: center;
+#price {
+display: block;
+align-self: center;
+width: 40%;
+font-size: 18px;
+font-weight: bold;
+color: #333;
+text-align: center;
+border: 1px solid red;
+border-radius: 30px;
+padding: 10px;
 }
 .stickerdiv{
-    display: block;
-    height:50%;
-    position:static;
-    margin-top: 20%;
-   
-  
+  display: block;
+  height:50%;
+  position:static;
+  margin-top: 20%;
+ 
+
 }
 /* Prevent one div from affecting the other */
 .personalizecontainer {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 20px;
-    gap: 20px;
-  }
-  
-  .pers-img-cont, 
-  .controllize-container {
-    flex: 1; /* Each div takes equal space */
-    /* Prevent growing */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 20px;
+  gap: 20px;
+}
 
-  }
-  
-  .pers-img-cont {
-    align-self: flex-start; /* Keeps the image container aligned at the top */
-  }
-  
-  .controllize-container {
-    align-self: flex-start; /* Keeps the control container aligned at the top */
-    overflow: auto; /* Add scrolling if content exceeds height */
-  }
-  
-  
+.pers-img-cont, 
+.controllize-container {
+  flex: 1; /* Each div takes equal space */
+  /* Prevent growing */
+
+}
+
+.pers-img-cont {
+  align-self: flex-start; /* Keeps the image container aligned at the top */
+}
+
+.controllize-container {
+  align-self: flex-start; /* Keeps the control container aligned at the top */
+  overflow: auto; /* Add scrolling if content exceeds height */
+}
 
 
 
@@ -451,4 +370,4 @@ input[type="number"] {
 
 
 
-  
+
