@@ -1,0 +1,32 @@
+.pers-img-cont-laser{
+    width:50%;
+    height:30%;
+}
+.personalizecontainer-laser {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* #goback-laser {
+    padding: 10px;
+    background-color: #007bff;
+    border-radius: 20px;
+    color: white;
+    border: none;
+    height: 10%;
+    width: 20%;
+    margin-left: 45%;
+
+  }
+  
+  #goback-laser:hover {
+    border: 1px solid gray;
+  } */
+  #fontcenter{
+    border: 2px solid gray;
+    margin-right: 5%;
+  }

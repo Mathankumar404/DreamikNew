@@ -1,0 +1,92 @@
+
+
+#map {
+     /* Fixed height for map */
+    width: 50%;  /* Fixed width */
+  /* Centers the map */
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#left-container {
+    padding: 20px;
+    width: 50%;
+}
+
+#search-container {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+#search-box {
+    width: 80%;
+    padding: 8px;
+}
+
+button {
+    padding: 8px 15px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.result-item {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+#locationdiv{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+#results-container{
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    height: 300px;
+    overflow-y: auto;
+}
+#map{
+    height: 500px;
+     width: 500px
+}
+@media (max-width: 768px) {
+    #locationdiv{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    #results-container{
+        margin: 10px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        height: 300px;
+        overflow-y: auto;
+    }
+    #left-container {
+        padding: 20px;
+        width: 100%;
+    }
+    #map{
+         height: 340px;
+          width: 340px;
+    }
+    #search-box {
+        width: 95%;
+        padding: 8px;
+    }
+}
+#search-btn{
+    margin-bottom: 25px;
+}

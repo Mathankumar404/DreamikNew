@@ -1,0 +1,118 @@
+#pendingorder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    padding: 20px;
+    width: 100%;
+    max-width: 800px; /* Max width for the container */
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  #pendingorder input {
+    padding: 10px;
+    margin-bottom: 15px;
+    width: 100%;
+    max-width: 300px; /* Limit width to prevent overflow */
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  #pendingorder button {
+    padding: 10px 20px;
+    background-color: #43d148;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    width: 100%;
+    max-width: 300px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  #pendingorder button:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+  }
+  
+  #error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
+  }
+  
+  #pending-files {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 images per row */
+    gap: 20px;
+    width: 100%;
+    margin-top: 20px;
+  }
+  
+  #pending-files > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border:1px solid white;
+    padding: 5px;
+    background:rgba(187, 220, 226, 0.452);
+  }
+  
+  #pending-files img {
+    width: 100%;
+    max-height: 200px;
+    object-fit: contain;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease-in-out;
+    transform: scale(1); /* Slight zoomed out by default */
+  }
+  
+  /* #pending-files img:hover {
+    transform: scale(1.05);
+  } */
+  
+  /* #pending-files pre {
+    max-width: 100%;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-size: 12px;
+    background-color: #f4f4f4;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+  } */
+  
+  #pendingorder h3 {
+    margin-bottom: 20px;
+    font-size: 20px;
+    text-align: center;
+    width: 100%;
+  }
+  
+  @media (max-width: 768px) {
+    #pendingorder input {
+      width: 90%; /* Adjust width for mobile */
+    }
+  
+    #pendingorder button {
+      width: 90%; /* Adjust width for mobile */
+    }
+  
+    #pending-files {
+      grid-template-columns: repeat(1, 1fr); /* 1 image per row on mobile */
+    }
+  
+    #pending-files img {
+      max-height: 150px;
+    }
+  
+    h3 {
+      font-size: 18px; /* Adjust title font size for smaller screens */
+    }
+  }
+  

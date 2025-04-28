@@ -1,0 +1,367 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+
+.container {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  background-color: #9dbcdd;
+}
+
+.title {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+button {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  color: white;
+  background-color: #17a2b8;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+button:disabled {
+  background-color: gray;
+  cursor: not-allowed;
+}
+
+.button-blue {
+  background-color: #007bff;
+}
+
+.button-purple {
+  background-color: #6f42c1;
+}
+
+.button-red {
+  background-color: #dc3545;
+}
+
+.button-green {
+  background-color: #28a745;
+}
+.border {
+  border: 1px solid #ddd;
+}
+
+.crop-tool-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.crop-container {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  background: #333;
+}
+
+.cropped-image {
+  margin-top: 20px;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+
+.circle-shape {
+  border-radius: 50%;
+}
+
+.square-shape {
+  border-radius: 5px;
+}
+
+.file-input {
+  padding: 5px;
+  font-size: 14px;
+}
+
+.shape-selector,
+.size-slider {
+  padding: 5px;
+  font-size: 14px;
+}
+
+.download-button {
+  background-color: #17a2b8;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+}
+.bgremovedimage {
+  display: none;
+  margin-left: 20%;
+  border: #333 2px solid;
+}
+.cropped-image {
+  margin-left: 20%;
+  border: #333 2px solid;
+
+  width: 20vw;
+  height: 20vw;
+}
+.Bgremover {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.hidden-file-input {
+  display: none !important;
+}
+.size-slider {
+  -webkit-appearance: none; /* Removes default styles in WebKit browsers */
+  appearance: none;
+  width: 100%;
+  height: 8px;
+  background: #130707 !important;
+  border-radius: 5px;
+  outline: none;
+  opacity: 0.9;
+  transition: opacity 0.2s;
+}
+
+.size-slider:hover {
+  opacity: 1;
+}
+
+.size-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: #4caf50;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.size-slider::-webkit-slider-thumb:hover {
+  background: #45a049;
+}
+
+.size-slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  background: #4caf50;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.size-slider::-moz-range-thumb:hover {
+  background: #45a049;
+}
+@media (max-width: 480px) {
+  .Bgremover {
+    /* border: 2px solid !important; */
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .bgremovedimage,
+  .cropped-image {
+    margin: 0;
+    margin-top: 30px;
+  }
+  .leo{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .dropzone{
+    width: 320px !important;
+    height: 300px !important;
+  }
+ #selectedImages,#processedImages{
+  width: 100% !important;
+  height: 95% !important;
+ }
+ .add-image-thumbnail {
+  width: 130px !important;
+  height: 130px !important;
+  border: 1px dashed #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.add-image-thumbnail:hover {
+  border-color: #3b82f6;
+}
+  
+}
+@media (max-width:360px){
+  .dropzone{
+    width: 240px !important;
+    border: 2px solid green !important;
+  }
+}
+.Bgtitle {
+  font-family: "Poppins", sans-serif; /* Change to any preferred font */
+  font-size: 24px; /* Adjust size as needed */
+  font-weight: bold; /* Makes the title bold */
+  color: #333; /* Dark gray for better readability */
+  text-align: center; /* Centers the title */
+  margin-bottom: 20px; /* Adds spacing below */
+}
+
+.dropzone {
+  display: flex;
+  height: 350px;
+  width: 450px;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid;
+  padding: 10px;
+  color: whitesmoke;
+  background-color: #243248;
+  border-radius: 50px;
+  flex-direction: column;
+  gap: 60px;
+}
+.container {
+  display: flex;
+  border: 2px solid;
+}
+.button-group .button11 {
+  background-color: #dd9d13;
+}
+.Bgremover{
+  /* border: 2px solid yellow; */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.crop-tool-container{
+  /* border: 2px solid red; */
+  flex-direction: column-reverse;
+  /* border: 2px solid; */
+  margin-bottom: 120px;
+}
+.leo{
+  /* border: 2px solid black; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+.relative{
+  /* border: 2px solid saddlebrown; */
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.relative select{
+  border-radius: 10px;
+  width: fit-content;
+  padding: 10px;
+  color: white;
+  background:  #324563;
+  font-weight:bolder;
+}
+.button21{
+  color: #007bff;
+}
+/* Image Gallery Styles */
+.image-gallery-container {
+  margin-top: 1rem;
+}
+
+.main-image-display {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.main-image {
+  max-width: 100%;
+  max-height: 500px;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.thumbnail-strip {
+  display: flex;
+  gap: 8px;
+  padding: 8px 0;
+  overflow-x: auto;
+}
+
+.thumbnail {
+  width: 60px;
+  height: 60px;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.thumbnail.active {
+  border-color: #3b82f6;
+}
+
+.thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 2px;
+}
+
+.add-image-thumbnail {
+  width: 60px;
+  height: 60px;
+  border: 1px dashed #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.add-image-thumbnail:hover {
+  border-color: #3b82f6;
+}
+
+.active-indicator {
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 8px;
+  height: 8px;
+  background: #3b82f6;
+  border-radius: 50%;
+}
+
+/* Processed image actions */
+.processed-container {
+  display: flex;
+  gap: 8px;
+  margin-top: 1rem;
+  justify-content: center;
+}
+
+/* Crop tool adjustments */
+.crop-tool-container {
+  margin-top: 2rem;
+}
+.main-image {
+  display: block; /* Ensure this isn't set to none */
+  max-width: 100%;
+  height: auto;
+}

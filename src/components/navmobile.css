@@ -1,0 +1,105 @@
+#whole{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:white ;
+    height: 50px;
+}
+#whole img{
+    width: 20px;
+    height: 20px;
+}
+#whole .mobileimg1 img{
+    width: 50px;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    margin-top: -7px;
+    
+} 
+#whole .mobileimg{
+    flex: 1;
+    margin-right: 15px;
+}
+#whole .mobileimg1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#whole #second{
+    display: flex;
+    justify-content: flex-end;
+    margin-left: 30px;
+}
+.mobileimg2{
+position: relative;
+}
+#cartnm1{
+    position: absolute;
+    top: -10px;
+    right: -6px;
+    max-width: 13px;
+    max-height: 15px;
+    font-size: 10px;
+  
+}
+
+.searchbar1{
+background: #2E2D42;
+height: 40px;
+max-width: 100%;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.searchbar2{
+    border: none;
+    border-radius: 20px;
+   width: 70%;
+   height:75%;
+   position: relative;
+   padding-left: 10px;
+}
+.searchbar1 img{
+    position:absolute;
+    right: 70px;
+    height: 15px;
+    width: 15px;
+}
+
+.searchbar1 img:active{
+    /* background-color: aqua; */
+    border-radius: 40px;
+    width: 20px;
+    height: 20px;
+
+}
+.side-menu{
+    background-color: white;
+    width: 60%;
+    position: absolute;
+    z-index: 100;
+    top: 2%;
+}
+.dropdown-menu{
+   margin-left: 0;
+    
+}
+.dropdown-cls-btn{
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    background: none ;
+    color:#2E2D42;
+    font-size: 30px;
+
+}
+
+.dropdown-item {
+    margin-left: 30px;
+}
+.mobileimg1 h4{
+    color: black;
+}

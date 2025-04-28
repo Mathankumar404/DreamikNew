@@ -1,0 +1,162 @@
+.student-name {
+  position: absolute;
+  top: 5%;
+  left: 140%;
+  font-weight: bolder;
+  white-space: nowrap;
+}
+.school-name {
+  position: absolute;
+  top: 30%;
+  right: -210%;
+  width: 150%;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  font-weight: bolder;
+}
+
+.student-class {
+  position: absolute;
+  top: 13%;
+  right: -85%;
+  font-weight: bolder;
+  
+}
+
+.student-section {
+  position: absolute;
+  top: 13%;
+  right: -174%;
+  font-weight: bolder;
+}
+.selectedImagecn {
+  width: 120px;
+  height: 120px;
+}
+.selectedimagecn1 {
+  position: absolute;
+  height: 100px;
+  top: 10%;
+  left: 24%;
+}
+@media (max-width: 480px) {
+  .student-name {
+    position: absolute;
+    top: 4%;
+    left: 130%;
+    font-weight: bolder;
+    font-size: 15px;
+  }
+
+  .school-name {
+    position: absolute;
+    top: 25%;
+    font-size: 10px;
+    right: -210%;
+    width: 150%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+    font-weight: bolder;
+  }
+
+  .student-class {
+    position: absolute;
+    font-size: 10px;
+
+    top: 11.5%;
+    right: -76%;
+    font-weight: bolder;
+  }
+
+  .student-section {
+    position: absolute;
+    font-size: 10px;
+
+    top: 11.5%;
+    right: -170%;
+    font-weight: bolder;
+  }
+}
+.label11 {
+  top: 13%;
+  left: 150%;
+}
+.label12 {
+  position: absolute;
+  top: 32%;
+  font-size: smaller !important;
+  right: -220%;
+  width: 135%;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  font-weight: bolder;
+}
+.label13,
+.label14 {
+  top: 20%;
+  left: 185%;
+  font-size: smaller;
+}
+.label14 {
+  left: 270%;
+}
+
+
+@media (max-width: 480px) {
+  .label11 {
+    top: 10%;
+    left: 130%;
+    font-weight: bolder;
+    font-size: x-small;
+  }
+
+  .label12 {
+    top: 27%;
+    font-size: x-small !important;
+    right: -210%;
+    width: 150%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+    font-weight: bolder;
+  }
+
+  .label13 {
+    font-size: x-small;
+    top: 17.5%;
+    font-weight: bolder;
+    left: 135px;
+  }
+
+  .label14 {
+    font-size: 10px;
+    left: 190px;
+    top: 17.5%;
+    font-weight: bolder;
+  }
+  .selectedImagecn {
+    width: 120px;
+    height: 90px;
+  }
+  .selectedimagecn1 {
+    position: absolute;
+    height: 70px;
+    top: 10%;
+    left: 24%;
+  }
+}

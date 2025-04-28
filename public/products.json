@@ -1,0 +1,189 @@
+{
+  "NameSlip": {
+    "name": "Name Slips",
+    "image": "image/demokidsimage13.webp",
+    "productcode": "57a167",
+    "price": "Matte: ₹100 / Glossy: ₹160",
+    "pieces":"(36 Nos)",
+    "status": 1,
+    "targetpage": "NameSlip/Name_Slip.html",
+    "logo": "/productlogos/green-notebook-with-a-pencil-pencil-and-notebook.webp",
+    "props": ["name slips", "label", "slips", "nameslip", "57a167"],
+    "outOfStock": false,
+    "Reseller": true
+  },
+  "Cutout Nameslip": {
+    "name": "Cutout Nameslips",
+    "image": "productlogos/image.webp",
+    "productcode": "5e10bf",
+    "price": 340.0,
+    "pieces":"(30 Nos)",
+    "status": 1,
+    "targetpage": "CutOutNameSlip/CutOutNameSlip.html",
+    "logo": "productlogos/image.webp",
+    "props": ["name slips", "label", "logo", "custamize", "5e10bf"],
+    "outOfStock": false,
+    "Reseller": true
+  },
+  "Birthday Cap":{
+    "name":"Birthday Cap",
+    "image":"/BirthdaycapImages/Birthdaysample/samplebirthday5.webp",
+    "productcode":"BC001",
+     "price":240.0,
+     "pieces":"(10 Pieces)",
+     "status":1,
+     "logo":"/BirthdaycapImages/Birthdaysample/samplebirthday5.webp",
+     "props":["Birthday","cap","celebration"],
+     "outOfStock":false,
+     "Reseller":true
+  },
+ 
+
+  "Custom NameSlip": {
+    "name": "Custom Name Slips",
+    "image": "image/DreamikAIComics-Label-Rectangle-v1 (59).webp",
+    "productcode": "57a16b",
+    "price": 250.0,
+    "status": 1,
+    "targetpage": "CustomNameslip/CustomNameslip.html",
+    "logo": "image/DreamikAIComics-Label-Rectangle-v1 (59).webp",
+    "props": ["name slips", "label", "slips", "nameslip", "57a167"],
+    "outOfStock": false,
+    "Reseller": true
+  },
+  "BulkOrder": {
+    "name": "Bulkorder",
+    "image": "productlogos/bulkorderlogo.webp",
+    "productcode": "699d1b",
+    "price": 300.0,
+    "status": 1,
+    "targetpage": "/bulkorder",
+    "logo": "productlogos/bulkorderlogo.webp",
+    "props": ["custamizable posters", "poster", "posters", "699d2b"],
+    "outOfStock": false,
+    "Reseller": false
+  },
+  "Bag_Tag": {
+    "name": "Custamizable Bag Tags",
+    "image": "productlogos/tag-green.webp",
+    "productcode": "699a2d",
+    "price": 250.0,
+    "status": 1,
+    "targetpage": "BagTag/bagtag.html",
+    "logo": "productlogos/tag-green.webp",
+    "props": ["bag tag", "tag", "bag", "slip", "699a2d"],
+    "outOfStock": false,
+    "Reseller": false
+  },
+   
+  "Background remover": {
+    "name": "AI Kick out Background (Free)",
+    "image": "productlogos/remove_bg.webp",
+    "productcode": "5e10bf",
+    "price": 0.0,
+    "status": 1,
+    "targetpage": "ai-generated/Name_Slip.html",
+    "logo": "productlogos/remove_bg.webp",
+    "props": ["name slips", "label", "logo", "custamize", "5e10bf"],
+    "outOfStock": false,
+    "Reseller": true
+  },
+  "AI-Generated": {
+    "name": "AI Text Behind Image(Free)",
+    "image": "productlogos/logo.webp",
+    "productcode": "5e10bf",
+    "price": 0.0,
+    "status": 1,
+    "targetpage": "ai-generated/Name_Slip.html",
+    "logo": "productlogos/logo.webp",
+    "props": ["name slips", "label", "logo", "custamize", "5e10bf"],
+    "outOfStock": false,
+    "Reseller": true
+  },
+
+  "Bulk printing software": {
+    "name": "Bulk printing software",
+    "image": "productlogos/bulkprinting.webp",
+    "productcode": "DKA4js6x2",
+    "price": 0,
+    "status": 1,
+    "targetpage": "dreamik glossy.html",
+    "logo": "productlogos/bulkprinting.webp",
+    "props": ["bulk", "printing", "printer", "reseller", "DKA4GS6x2"],
+    "outOfStock": false,
+    "Reseller": true
+  },
+  "Posters": {
+    "name": "Custamizable Posters",
+    "image": "image/poster.webp",
+    "productcode": "699d2b",
+    "price": 300.0,
+    "status": 1,
+    "targetpage": "Poster/Poster.html",
+    "logo": "productlogos/frames-school-border.webp",
+    "props": ["custamizable posters", "poster", "posters", "699d2b"],
+    "outOfStock": false,
+    "Reseller": false
+  },
+  "Fridge Magnets": {
+    "name": "Customizable Fridge Magnets",
+    "image": "productlogos/fridge-magnet.webp",
+    "productcode": "699d2b",
+    "price": 300.0,
+    "status": 1,
+    "targetpage": "/MURVEN-DreamikAI-dreamik.com-web-prodv2/FridgeMagnet/magnet.html",
+    "logo": "productlogos/fridge-magnet.webp",
+    "props": ["custamizable magnets", "fridge magnets", "magnets", "699d2b"],
+    "outOfStock": false,
+    "Reseller": false
+  },
+  "Sticker": {
+    "name": "Custamizable Stickers",
+    "image": "productlogos/sticker_logo.webp",
+    "productcode": "5e10bf",
+    "price": 100.0,
+    "status": 1,
+    "targetpage": "Sticker/Sticker.html",
+    "logo": "productlogos/sticker_logo.webp",
+    "props": ["sticker", "logo", "custamize", "5e10bf"],
+    "outOfStock": false,
+    "Reseller": false
+  },
+  "Pencil Engraving": {
+    "name": "Custamizable Pencils Name Engraving",
+    "image": "productlogos/customized_pencil_logo.webp",
+    "productcode": "5e10bf",
+    "price": 100.0,
+    "status": 1,
+    "targetpage": "PencilNameGenerator-main/pencil.html",
+    "logo": "productlogos/customized_pencil_logo.webp",
+    "props": ["name slips", "label", "logo", "custamize", "5e10bf"],
+    "outOfStock": true,
+    "Reseller": false
+  },
+  "Notebooks": {
+    "name": "Notebooks",
+    "image": "productlogos/Notebooklogo.webp",
+    "productcode": "699d2b",
+    "price": 300.0,
+    "status": 1,
+    "targetpage": "Notebook/index.html",
+    "logo": "productlogos/Notebooklogo.webp",
+    "props": ["custamizable posters", "poster", "posters", "699d2b"],
+    "outOfStock": false,
+    "Reseller": false
+  }, 
+   "Inkjet/Laser printer": {
+    "name": "Dreamik Glossy Inkjet/Laser Sticker Paper printer (6x2)",
+    "image": "productlogos/laserprinter.webp",
+    "productcode": "DKA4GS6x2",
+    "price": 500.0,
+    "status": 1,
+    "targetpage": "dreamik glossy.html",
+    "logo": "productlogos/laserprinter.webp",
+    "props": ["injket", "laser", "printer", "reseller", "DKA4GS6x2"],
+    "outOfStock": false,
+    "Reseller": true
+  }
+ 
+}

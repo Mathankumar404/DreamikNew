@@ -4,7 +4,7 @@ function Advertisement() {
   const [advertisements, setAdvertisements] = useState([]);
 
   useEffect(() => {
-   const fetchAdvertisementData = async () => {
+    const fetchAdvertisementData = async () => {
       try {
         const response = await fetch('../advertisments.json');
         if (!response.ok) throw new Error('Failed to fetch advertisements');
@@ -22,7 +22,7 @@ function Advertisement() {
     <div className="running-banner">
       <div className="marquee">
         {advertisements.map((ad, index) => (
-          <a key={index} href={ad.link}>{ad.message}</a>
+          <a key={index} href={ad.link}> <img src="/mediaquery/star.png" alt="" width={"10px"} height={"10px"} />{ad.message}</a>
         ))}
       </div>
     </div>

@@ -1,35 +1,65 @@
-import React, { useState, useEffect } from 'react';
-import '../ResellerLogin.css';
-
-function ResellerLogin({ onClose }) {
-  const [resellers, setResellers] = useState([]);
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-  const [message, setMessage] = useState('');
-  const [isLoggedIn, setIsLoggedIn] = useState(false); // New state for login status
-
-  // Fetch reseller data from the JSON file
+import React, { useState } from "react";
+import "../ResellerLogin.css";
+import { useEffect } from "react";
+function ResellerLogin({ onClose, setUsername,setUserid, setResellerLogin, setResellerProducts }) {
+  const [usernameInput, setUsernameInput] = useState("");
+  const [password, setPassword] = useState("");
+  const [message, setMessage] = useState("");
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoading, setIsLoading] = useState(false); 
+  // New loading state
   useEffect(() => {
-    fetch('/reseller/reseller.json')
-      .then((response) => response.json())
-      .then((data) => setResellers(data))
-      .catch((error) => console.error('Error fetching reseller data:', error));
+    const storedReseller = localStorage.getItem("loggedReseller");
+    if (storedReseller) {
+      setReseller(JSON.parse(storedReseller));
+    }
   }, []);
+   
 
-  // Handle form submission
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsLoading(true); // Start loading
+    setMessage("🔄 Logging in... Please wait!");
 
-    // Find the matching reseller
-    const reseller = resellers.find(
-      (res) => res.name === username && res.password === password
-    );
+    try {
+      const response = await fetch("https://dreamik-intern.onrender.com/api/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ username: usernameInput, password }),
+      });
 
-    if (reseller) {
-      setMessage(`Welcome, ${reseller.name}!`);
-      setIsLoggedIn(true); // Set login status to true
-    } else {
-      setMessage('Invalid Username or Password!');
+      const data = await response.json();
+
+      if (data.success) {
+        setMessage(`✅ Welcome, ${data.user.name}!`);
+        setIsLoggedIn(true);
+        setUsername(data.user.name);
+        setUserid(data.user.id);
+        setResellerProducts(data.user.products);
+        setResellerLogin(true);
+        setTimeout(onClose, 1000);
+        localStorage.setItem("ResellerLogin",true)
+        localStorage.setItem('username',data.user.name)
+        localStorage.setItem('resid',data.user.id);
+        localStorage.setItem('ResellerProducts',data.user.products);
+        localStorage.setItem('Rescoup',data.user.coupon);
+        localStorage.setItem('address1',data.user.address1);
+        localStorage.setItem('state',data.user.state);
+        localStorage.setItem('offercount',data.user.offercount);
+        localStorage.setItem('resellerform',JSON.stringify(data.user));
+        window.location.reload();
+
+
+      } else {
+        setMessage("❌ Invalid Username or Password!");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      setMessage("⚠️ Server error. Try again later.");
+    } finally {
+      setIsLoading(false); // Stop loading
     }
   };
 
@@ -39,17 +69,18 @@ function ResellerLogin({ onClose }) {
         <button className="close-button" onClick={onClose}>
           &times;
         </button>
-        <h2 id="heading">RESELLER LOGIN</h2>
+        <h2 id="heading">Reseller Login</h2>
         <h2 id="message">{message}</h2>
 
-        {!isLoggedIn ? ( // Show the form only if the user is not logged in
+        {!isLoggedIn ? (
           <form onSubmit={handleSubmit} id="loginform">
             <input
               type="text"
               placeholder="Username"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
+              value={usernameInput}
+              onChange={(e) => setUsernameInput(e.target.value)}
               id="resellername"
+              disabled={isLoading} // Disable input while logging in
             />
             <input
               type="password"
@@ -57,18 +88,15 @@ function ResellerLogin({ onClose }) {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               id="resellerpassword"
+              disabled={isLoading}
             />
-            <button type="submit" id="submit">SUBMIT</button>
+            <button type="submit" id="submit" disabled={isLoading}>
+              {isLoading ? "Logging in..." : "Submit"}
+            </button>
           </form>
         ) : (
           <div className="welcome-message">
-            <h3>You are now logged in!</h3>
-          </div>
-        )}
-
-        {!isLoggedIn && (
-          <div id="forgot">
-            <a href="#">Forgot password?</a>
+            <h3>You are now logged in! 🎉</h3>
           </div>
         )}
       </div>

@@ -1,0 +1,245 @@
+#productsample{
+    width: 100%;
+}
+.sampleprod{
+    width: 100px;
+    height: 100px;
+}
+.sampleimg{
+    width: 100px;
+    height: 70px;
+}
+#products {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  background: #045980;
+  padding: 20px;
+  border-radius: 10px;
+
+}
+
+.product {
+  width: 400px;
+  height: 400px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+  background:#fbfbfc;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  transition: box-shadow 0.3s, transform 0.3s;
+  position: relative; /* 🔑 Add this */
+
+}
+
+.product:hover {
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  transform: translateY(-5px);
+}
+
+.productimg {
+  max-width: 300px;
+  max-height: 180px;
+  border-radius: 5px;
+  transition: transform 0.3s;
+}
+
+.productimg:hover {
+  transform: scale(1.05);
+}
+
+.productname {
+  font-size: 20px;
+  font-weight: 700;
+  color: #333;
+}
+
+.productprice {
+  font-size: 18px;
+  color: #28666e;
+  font-weight: 600;
+}
+  /* Custom arrow buttons */
+  .arrow {
+    position: absolute;
+    top: -100px;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 10;
+    transition: background 0.3s ease;
+  }
+  
+  .arrow:hover {
+    background: rgba(0, 0, 0, 0.8);
+  }
+  
+  /* Left arrow */
+  .prev {
+    left: 10px;
+  }
+  
+  /* Right arrow */
+  .next {
+    right: 10px;
+  }
+  
+  /* Dots navigation styling */
+  .slick-dots {
+    bottom: 10px;
+  }
+  
+  .slick-dots li button:before {
+    font-size: 12px;
+    color: white;
+  }
+  
+  .slick-dots li.slick-active button:before {
+    color: red;
+  }
+  .demo-order{
+    background-color:#E08A25 ;
+    height:50px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: larger;
+    color:  #FFFFFF;
+    font-family:'Poor Richard';
+    font-weight: 400;
+  }
+  /* Demo For Placing Order */
+
+
+
+
+
+
+  /* Arrows: Hide on small screens */
+  @media (max-width: 500px) {
+    .arrow {
+      display: none !important;
+    }
+    .slick-slider {
+        overflow: hidden; /* 🔹 Ensures slider content doesn't overflow */
+      }
+      
+      .slick-list {
+        overflow: hidden; /* 🔹 Prevents slides from overflowing */
+      }
+      
+      .slick-track {
+        display: flex;
+        overflow: hidden; 
+      }
+      .sampleimg{
+        border:1px solid black;
+        border-radius: 20px;
+      }
+      .sampletitle{
+        font-size: 10px;
+        margin-top: 4px;
+      }
+      
+.product {
+  border:1px solid black;
+ box-sizing: border-box;
+ width:100% !important;
+ height: 220px;
+ padding: 10px;
+}
+#products {
+  background:white;
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 8px;
+  padding: 0;
+  
+
+}
+
+.productname {
+  font-size: 12px !important;
+  font-weight: 500 ;
+  color: #333;
+}
+
+.productprice {
+  font-size: 12px !important;
+  color: #28666e;
+  font-weight: 400;
+  /*  ₹100 */
+
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 500;
+font-size: 10px;
+line-height: 24px;
+/* or 240% */
+
+color: #000000;
+
+
+}
+/* Express Shipping */
+
+
+.productimg {
+  width: 100% !important;
+ 
+  height: 40% !important;
+  border-radius: 5px;
+  transition: transform 0.3s;
+}
+  }
+
+ @media screen and (max-width: 760px) {
+  
+  #products {
+    flex-direction: column;
+  }
+  .product {
+    width: 90%;
+  }
+  .productname,
+  .productprice {
+    font-size: 16px;
+  }
+  #p {
+    font-size: 24px;
+  }
+  .productimg {
+    width: 100%;
+  }
+}
+
+
+
+.offer-tag {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #e63946; /* Red */
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 4px 8px;
+  border-bottom-left-radius: 6px;
+  z-index: 10;
+}

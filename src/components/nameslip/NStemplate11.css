@@ -1,0 +1,640 @@
+/* Container for the main personalize section */
+.personalizecontainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px;
+    gap: 20px;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  }
+  
+  .pers-img-cont, 
+  .controllize-container {
+    flex: 1;
+    min-width: 300px; /* Set minimum width for better responsiveness */
+  }
+  
+  .pers-img-cont {
+    align-self: flex-start;
+  }
+  
+  .controllize-container {
+    align-self: flex-start;
+    overflow: auto;
+  }
+  
+   /* Image container styles */
+   .pers-img-cont {
+    flex: 1;
+    
+    /* border: 1px solid #ddd; */
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    height: fit-content;
+    
+    }
+  
+  /* Product and selected image styling */
+  .personalise-Image {
+    width: 100%;
+    position: relative;
+    height: auto;
+    object-fit: cover;
+  }
+   #watermark {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    z-index: 3;
+  
+  }
+  
+  .personImage11 {
+    position: absolute ;
+    top: 36%;
+    left: 80%;
+    overflow:hidden;
+    transform: translate(-50%, -50%);
+    max-width: 28%;
+    max-height: 32%;
+    width:20% ;
+    border:#000000 solid;
+    
+    }
+   
+   
+  /* Labels for student details */
+  .studentname-lab11, .schoolname-lab11, .subjectname-lab11, 
+  .rollnu-lab11, .sectionname-lab11, .classname-lab11 {
+    position: absolute;
+    text-align: center;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    font-size: 30px;
+   
+  
+  }
+  .studentname-lab11{
+    font-size: 35px !important;
+  }
+
+ 
+  
+  
+  
+  .studentname-lab11 { top: 29%; left: 20%;}
+  .schoolname-lab11 { top: 60%; left: 20%; }
+  .subjectname-lab11 { top: 49%; left: 25%;opacity:0 !important; }
+  
+  .sectionname-lab11 { top: 39%; left: 46%; width: 130px; }
+  .classname-lab11 { top: 39%; left: 20%; }
+
+
+  .namelabel11-style-1{
+    left: 20% !important;
+  }
+  .schoolnamelabel11-style-1{
+    top:52% !important ;
+
+  }
+  .classnamelabel11-style-1{
+    top: 36% !important;
+    left: 20% !important;
+  }
+  .sectionnamelabel11-style-1{
+    top: 36% !important;
+    left: 41% !important;
+  }
+  .rollnulabel11-style-1{top: 60% !important;left:10%;
+    font-size: 30px !important;
+  }
+
+  
+
+    
+  .namelabel11-style-3{top: 29%;left: 27%;}
+  .schoolnamelabel11-style-3{top:59%;left:22%}
+  .classnamelabel11-style-3{top: 39%;left:19% ;}
+  .sectionnamelabel11-style-3{top:39%;left:45%}
+  .rollnulabel11-style-3{top: 10%;left: 48%;}
+  
+  
+  .namelabel11-style-2{top: 28%;left: 25% !important;}
+  .schoolnamelabel11-style-2{top:59%;left:20%}
+  .subjectnamelabel11-style-2{top:48%;left:58%}
+  .classnamelabel11-style-2{top: 38.5%;left:18% ;}
+  .sectionnamelabel11-style-2{top:38.5%;left:44%}
+  .rollnulabel11-style-2{top: 10%;left: 84%;}
+   
+  
+ 
+
+  .namelabel11-style-4{top: 30%;left: 22% !important;}
+  .schoolnamelabel11-style-4{top:59%;left:24%}
+  .subjectnamelabel11-style-4{top:48%;left:58%}
+  .classnamelabel11-style-4{top: 38.5%;left:25%;}
+  .sectionnamelabel11-style-4{top:38.5%;left:51%}
+  .rollnulabel11-style-4{top: 39%;left:10%;}
+  
+  .namelabel11-style-5{top: 30%;left: 28%;}
+  .schoolnamelabel11-style-5{top:58.7%;left:24%}
+  .subjectnamelabel11-style-5{top:48%;left:58%}
+  .classnamelabel11-style-5{top: 39%;left:26.5%;}
+  .sectionnamelabel11-style-5{top:39%;left:50%}
+  .rollnulabel11-style-5{top: 39%;left:10%;}
+
+
+  /* Controls container */
+  .controllize-container {
+    background-color: #ddd;
+    border: 1px solid rgba(0, 0, 0, 0.233);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  /* Control buttons and inputs */
+  #buttonscontrol {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  
+  /* Range sliders for brightness and contrast */
+  input[type="range"] {
+    width: 100%;
+    background-color: #ddd;
+    height: 5px;
+    border-radius: 5px;
+    outline: none;
+  }
+  
+  /* Student details input fields */
+  .student-details input {
+    width: 50%;
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+  }
+  
+  /* Font customization section */
+  #fontcenter {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .fontsizebtn {
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 5px;
+    background-color: #2894a7;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    margin: 10px;
+  }
+  
+  .fontsizebtn:hover {
+    background-color: #14669c;
+  }
+  
+  /* Customize and details toggles */
+  /* Customize divs hidden by default */
+  
+  #OD {
+    display: none; /* Initially hidden */
+  }
+  
+  /* Uniform button styles for customize div buttons */
+  #customizediv11 button, #namecustomizediv11 button, 
+  #schoolnamecustomizediv11 button, #rollcustomizediv11 button, 
+  #sectioncustomizediv11 button, #classcustomizediv11 button, 
+  #OD button ,#sel-img-btn,#editImage,#otherdetails{
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 5px;
+    transition: background-color 0.3s ease;
+  }
+  .custamlogo
+  {
+    border: 1px solid;
+    padding: 1px;
+    margin: 0 10px;
+  }
+  
+  /* Hover effect for customize div buttons */
+  #customizediv11 button:hover, #namecustomizediv11 button:hover, 
+  #schoolnamecustomizediv11 button:hover, #rollcustomizediv11 button:hover, 
+  #sectioncustomizediv11 button:hover, #classcustomizediv11 button:hover, 
+  #OD button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Additional styles for alignment and spacing if needed */
+  #customizediv11, #namecustomizediv11, #schoolnamecustomizediv11, 
+  #rollcustomizediv11, #sectioncustomizediv11, #classcustomizediv11, 
+  #OD {
+    padding: 15px;
+    border: 1px solid #ddd;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+    margin-top: 10px;
+  }
+  
+  /* Responsive adjustments for customize divs */
+  @media (max-width: 768px) {
+    
+ 
+      
+  
+  }
+  
+  
+  /* Font and quantity customization */
+  #font-color {
+    width: 20%;
+    align-self: center;
+    color: #0056b3;
+    font-weight: 600;
+  }
+  
+  #font-family {
+    color: #0056b3;
+    font-weight: 600;
+  }
+  
+  #type button {
+    width: 20%;
+    background-color: #ccc;
+    padding: 10px;
+  }
+  
+  #size {
+    padding: 7px;
+  }
+  
+  #size select {
+    padding: 10px; 
+  }
+  
+  #quantity {
+    padding: 5px 30px;
+    color: #0056b3;
+    font-weight: 600;
+    font-size: larger;
+  }
+  
+  /* Quantity input */
+  input[type="number"] {
+    width: 100px;
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 0 7px;
+    font-weight: 600;
+  }
+  
+  /* Add to cart and download buttons */
+  #add, #down {
+    width: 60%;
+  padding: 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #17b83a;
+  color: white;
+  font-size: 16px;
+  font-weight: 800;
+  cursor: pointer;
+  text-align: center;
+  align-self: center;
+  }
+  
+  #down {
+    background-color: #0056b3;
+  }
+  
+  #add:hover, #down:hover {
+    background-color: #000000;
+    color: #17b83a;
+    letter-spacing: 2px;
+    border-radius: 30px;
+  }
+  
+  /* WhatsApp button */
+  #whatsapp {
+    width: 70%;
+    align-self: center;
+    background-color: #0c0505;
+    font-size: medium;
+    font-weight: 600;
+    color: #ccc;
+  }
+  
+  #whatsapp-icon {
+    font-weight: 600;
+    font-size: 20px;
+    padding: 5px;
+    color: #17b83a;
+  }
+  
+  /* Price label */
+  #price {
+    display: block;
+    align-self: center;
+    width: 40%;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    border-radius: 30px;
+    padding: 10px;
+  }
+  
+  /* Sticker container */
+  .stickerdiv {
+    display: block;
+    height: 50%;
+    position: static;
+    margin-top: 20%;
+  }
+  
+  #goback {
+    padding: 10px;
+    background-color: #007bff;
+    border-radius: 20px;
+    color: white;
+    border: none;
+  }
+  
+  #goback:hover {
+    border: 1px solid gray;
+  }
+  
+  /* Responsive media queries */
+  @media (max-width: 1120px) {
+    .personalizecontainer {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .pers-img-cont, 
+    .controllize-container {
+      width: 100%;
+    }
+  
+    .pers-img-cont {
+      margin-bottom: 20px;
+    }
+   
+  }
+  
+  @media (max-width: 768px) {
+    
+    .studentname-lab11, .schoolname-lab11, .subjectname-lab11, 
+    .rollnu-lab11, .sectionname-lab11, .classname-lab11 {
+      font-size: 25px !important;
+    }
+    .studentname-lab11 { top: 27% !important;left: 26% !important; }
+    .schoolname-lab11 { top: 55% !important; left: 22% !important; }
+    .subjectname-lab11 { top: 53% !important; left: 25% !important; }
+    .rollnu-lab11 { top: 10% !important; left: 25% !important; }
+    .sectionname-lab11 { top: 37% !important; left: 36% !important; }
+    .classname-lab11 { top: 37% !important; left: 25% !important; }
+  
+    .personImage11{
+      position: absolute;
+      top: 33.2%;
+      left: 69.9%;
+      z-index: 3;
+      border: 2px solid black; /* Default, can be overridden by inline styles */
+      border-radius: 100%; /* Default, can be overridden by inline styles */
+      filter: brightness(100%) contrast(100%); /* Default, can be overridden by inline styles */
+      transform: scale(1) rotate(0deg) translate(0px, 0px) scaleX(1); /* Default, can be overridden by inline styles */
+      transition: transform 0.2s;
+      max-width: 36%;
+      max-height: 34%;
+      width:27% ;
+     }
+    #add, #down {
+      width: 80%;
+      font-size: 14px;
+    }
+  
+    #price {
+      width: 60%;
+      font-size: 16px;
+    }
+  
+  }
+  
+  @media (max-width: 480px) {
+    .personalizecontainer {
+      flex-direction: column;
+    }
+   .personImage11{
+    position: absolute;
+    top: 28% !important;
+    left: 68.3% !important;
+    z-index: 3;
+    border: 2px solid black; /* Default, can be overridden by inline styles */
+    border-radius: 100%; /* Default, can be overridden by inline styles */
+    filter: brightness(100%) contrast(100%); /* Default, can be overridden by inline styles */
+    transform: scale(1) rotate(0deg) translate(0px, 0px) scaleX(1); /* Default, can be overridden by inline styles */
+    transition: transform 0.2s;
+    max-width: 36%;
+    max-height: 34%;
+    width:27% ;
+   }
+    .pers-img-cont {
+      margin-bottom: 20px;
+      padding: 10px;
+    }
+  
+   
+    #add, #down {
+      font-size: 12px;
+      padding: 8px;
+    }
+  
+    #price {
+      font-size: 14px;
+    }
+    .studentname-lab11, .schoolname-lab11, .subjectname-lab11, 
+  .rollnu-lab11, .sectionname-lab11, .classname-lab11 {
+    font-size: 15px !important;
+  }
+  .schoolname-lab12{
+    font-size: 12px !important;
+  }
+
+
+  .namelabel11-style-1{
+    left: 20% !important;
+  }
+  .schoolnamelabel11-style-1{
+    top:53% !important ;
+
+  }
+  .classnamelabel11-style-1{
+    top: 37% !important;
+    left: 17% !important;
+  }
+  .sectionnamelabel11-style-1{
+    top: 37% !important;
+    left: 30% !important;
+  }
+  .rollnulabel11-style-1{top: 60% !important;left:28% !important;
+    font-size: 15px !important;
+  }
+
+  .namelabel11-style-2{top: 30% !important;left: 20% !important;}
+  .schoolnamelabel11-style-2{top:59%;left:20%}
+  .classnamelabel11-style-2{top: 38% !important;left:18% !important ;}
+  .sectionnamelabel11-style-2{top:38% !important;left:35% !important}
+  .rollnulabel11-style-2{top: 1000% !important;left: 84%;}
+
+
+  .namelabel11-style-3{top: 29%;left: 27%;}
+  .schoolnamelabel11-style-3{top:56% !important;left:22%}
+  .classnamelabel11-style-3{top: 39% !important;left:19% !important;}
+  .sectionnamelabel11-style-3{top:39% !important;left:33% !important}
+  .rollnulabel11-style-3{top: 1000% !important;left: 48%;}
+ 
+
+  .namelabel11-style-5{top: 30% !important;left: 27%;}
+  .schoolnamelabel11-style-5{top:56% !important;left:22%}
+  .classnamelabel11-style-5{top: 39% !important;left:25% !important;}
+  .sectionnamelabel11-style-5{top:39% !important;left:40% !important}
+  .rollnulabel11-style-5{top: 1000% !important;left: 48%;}
+
+  
+  .namelabel11-style-4{top: 30% !important;left: 27%;}
+  .schoolnamelabel11-style-4{top:56% !important;left:22%}
+  .classnamelabel11-style-4{top: 39% !important;left:25% !important;}
+  .sectionnamelabel11-style-4{top:39% !important;left:40% !important}
+  .rollnulabel11-style-4{top: 1000% !important;left: 48%;}
+  }
+  
+   
+  
+ 
+  
+  /* Second Layer: Watermark Image */
+  .watermark11 {
+  position: absolute;
+  top: 26%;
+  left: 0;
+  z-index: 2;
+  width: 100%; /* Adjust as needed */
+  height: auto; /* Adjust as needed */
+  opacity: 0.9; /* Adjust opacity if needed */
+  }
+  
+  /* Last Layer: Person Image and Labels */
+  .personImage11 {
+  position: absolute;
+  top: 33.2%;
+  left: 69.9%;
+  z-index: 3;
+  border: 2px solid black; /* Default, can be overridden by inline styles */
+  border-radius: 100%; /* Default, can be overridden by inline styles */
+  filter: brightness(100%) contrast(100%); /* Default, can be overridden by inline styles */
+  transform: scale(1) rotate(0deg) translate(0px, 0px) scaleX(1); /* Default, can be overridden by inline styles */
+  transition: transform 0.2s;
+  max-width: 36%;
+  max-height: 34%;
+  width:27% ;
+  }
+  
+  /* Labels */
+  .studentname-lab11,
+  .schoolname-lab11,
+  .subjectname-lab11,
+  .rollnu-lab11,
+  .sectionname-lab11,
+  .classname-lab11 {
+  position: absolute;
+  z-index: 3;
+  color: black; /* Default, can be overridden by inline styles */
+  font-family: Arial, sans-serif; /* Default, can be overridden by inline styles */
+  transform: scale(1) rotate(0deg) translate(0px, 0px) scaleX(1); /* Default, can be overridden by inline styles */
+  transition: transform 0.2s;
+  }
+  
+  /* Example positioning for labels (adjust as needed) */
+  
+  @media (max-width: 480px){
+  
+  }
+  .watermark-special11 {
+    position: absolute;
+  top: 26%;
+  left: 4%;
+  z-index: 2;
+  width: 85%; /* Adjust as needed */
+  height: 55%; /* Adjust as needed */
+  opacity: 0.9;
+  }
+  .namelabel11-style-3,.schoolnamelabel11-style-3,.subjectnamelabel11-style-3,.classnamelabel11-style-3,.sectionnamelabel11-style-3,.rollnulabel11-style-3{
+    position: absolute;
+    z-index: 3;
+    color: black; /* Default, can be overridden by inline styles */
+    font-family: Arial, sans-serif; /* Default, can be overridden by inline styles */
+    transform: scale(1) rotate(0deg) translate(0px, 0px) scaleX(1); /* Default, can be overridden by inline styles */
+    transition: transform 0.2s;
+  }
+  .namelabel11-style-2,.schoolnamelabel11-style-2,.subjectnamelabel11-style-2,.classnamelabel11-style-2,.sectionnamelabel11-style-2,.rollnulabel11-style-2{
+    position: absolute;
+   
+    z-index: 3;
+    color: black; /* Default, can be overridden by inline styles */
+    font-family: Arial, sans-serif; /* Default, can be overridden by inline styles */
+    transform: scale(1) rotate(0deg) translate(0px, 0px) scaleX(1); /* Default, can be overridden by inline styles */
+    transition: transform 0.2s;
+  }
+  
+  
+  .namelabel11-style-4,.schoolnamelabel11-style-4,.subjectnamelabel11-style-4,.classnamelabel11-style-4,.sectionnamelabel11-style-4,.rollnulabel11-style-4{
+    position: absolute;
+    z-index: 3;
+    color: black; /* Default, can be overridden by inline styles */
+    font-family: Arial, sans-serif; /* Default, can be overridden by inline styles */
+    transform: scale(1) rotate(0deg) translate(0px, 0px) scaleX(1); /* Default, can be overridden by inline styles */
+    transition: transform 0.2s;
+  }
+  .namelabel11-style-1,.schoolnamelabel11-style-1,.subjectnamelabel11-style-1,.classnamelabel11-style-1,.sectionnamelabel11-style-1,.rollnulabel11-style-1{
+    position: absolute;
+    z-index: 3;
+    color: black; /* Default, can be overridden by inline styles */
+    font-family: Arial, sans-serif; /* Default, can be overridden by inline styles */
+    transform: scale(1) rotate(0deg) translate(0px, 0px) scaleX(1); /* Default, can be overridden by inline styles */
+    transition: transform 0.2s;
+  }
+
+  
+  .namelabel11-style-5,.schoolnamelabel11-style-5,.subjectnamelabel11-style-5,.classnamelabel11-style-5,.sectionnamelabel11-style-5,.rollnulabel11-style-5{
+    position: absolute;
+    
+    z-index: 3;
+    color: black; /* Default, can be overridden by inline styles */
+    font-family: Arial, sans-serif; /* Default, can be overridden by inline styles */
+    transform: scale(1) rotate(0deg) translate(0px, 0px) scaleX(1); /* Default, can be overridden by inline styles */
+    transition: transform 0.2s;
+  }
+  
+
+  

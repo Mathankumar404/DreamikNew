@@ -1,0 +1,554 @@
+/* Container for the main personalize section */
+.personalizecontainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px;
+    gap: 20px;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  }
+  
+  .pers-img-cont, 
+  .controllize-container {
+    flex: 1;
+    min-width: 300px; /* Set minimum width for better responsiveness */
+  }
+  
+  .pers-img-cont {
+    align-self: flex-start;
+  }
+  
+  .controllize-container {
+    align-self: flex-start;
+    overflow: auto;
+  }
+  
+   /* Image container styles */
+   .pers-img-cont {
+    flex: 1;
+    
+    /* border: 1px solid #ddd; */
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    height: fit-content;
+    
+    }
+  
+  /* Product and selected image styling */
+  .personalise-Image {
+    width: 100%;
+    position: relative;
+    height: auto;
+    object-fit: cover;
+  }
+   #watermark {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    z-index: 3;
+  
+  }
+  
+  .personImage8 {
+    position: absolute ;
+    top: 35%;
+    left: 1% ;
+    overflow:hidden;
+    transform: translate(-50%, -50%);
+    max-width: 28%;
+    max-height: 34%;
+    width:30% ;
+    border:#000000 solid;
+    
+    }
+   
+   
+  /* Labels for student details */
+  .studentname-lab8, .schoolname-lab8, .subjectname-lab8, 
+  .rollnu-lab8, .sectionname-lab8, .classname-lab8 {
+    position: absolute;
+    text-align: center;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    font-size: 30px;
+   
+  
+  }
+ 
+  
+  
+  
+  .studentname-lab8 { top: 30%; left: 58%;}
+  .schoolname-lab8 { top: 59%; left: 51%; }
+  .subjectname-lab8 { top: 49%; left: 56%; }
+  
+  .sectionname-lab8 { top: 39%; left: 65%; width: 130px; }
+  .classname-lab8 { top: 39%; left: 52%; }
+  
+
+  .namelabel8-style-4{top: 30% !important;left: 48% !important;}
+      .schoollabel8-style-4{top:61% !important;left:49% !important}
+      .subjectnamelabel8-style-4{top:42% !important;left:58% !important}
+      .classnamelabel8-style-4{top: 40% !important;left:54% !important;}
+      .sectionnamelabel8-style-4{top:40% !important;left: 80% !important;}
+      .rollnulabel8-style-4{top: 100000% !important;left: 53% !important;}
+    
+      .namelabel8-style-5{top: 30% !important;left: 48% !important;}
+      .schoollabel8-style-5{top:61% !important;left:49% !important}
+      .subjectnamelabel8-style-5{top:42% !important;left:58% !important}
+      .classnamelabel8-style-5{top: 40% !important;left:54% !important;}
+      .sectionnamelabel8-style-5{top:40% !important;left: 80% !important;}
+      .rollnulabel8-style-5{top: 100000% !important;left: 53% !important;}
+       
+
+
+      .namelabel8-style-3{top: 27% !important;left: 48% !important;}
+      .schoolnamelabel8-style-3{top:52% !important;left:44% !important}
+      .subjectnamelabel8-style-3{top:42% !important;left:58% !important}
+      .classnamelabel8-style-3{top: 36% !important;left:44% !important;}
+      .sectionnamelabel8-style-3{top:36% !important;left: 65% !important;}
+      .rollnulabel8-style-3{top: 60% !important;left: 53% !important;}
+      
+  /* Controls container */
+  .controllize-container {
+    background-color: #ddd;
+    border: 1px solid rgba(0, 0, 0, 0.233);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  /* Control buttons and inputs */
+  #buttonscontrol {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  
+  /* Range sliders for brightness and contrast */
+  input[type="range"] {
+    width: 100%;
+    background-color: #ddd;
+    height: 5px;
+    border-radius: 5px;
+    outline: none;
+  }
+  
+  /* Student details input fields */
+  .student-details input {
+    width: 50%;
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+  }
+  
+  /* Font customization section */
+  #fontcenter {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .fontsizebtn {
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 5px;
+    background-color: #2894a7;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    margin: 10px;
+  }
+  
+  .fontsizebtn:hover {
+    background-color: #14669c;
+  }
+  
+  /* Customize and details toggles */
+  /* Customize divs hidden by default */
+  
+  #OD {
+    display: none; /* Initially hidden */
+  }
+  
+  /* Uniform button styles for customize div buttons */
+  #customizediv8 button, #namecustomizediv8 button, 
+  #schoolnamecustomizediv8 button, #rollcustomizediv8 button, 
+  #sectioncustomizediv8 button, #classcustomizediv8 button, 
+  #OD button ,#sel-img-btn,#editImage,#otherdetails{
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 5px;
+    transition: background-color 0.3s ease;
+  }
+  .custamlogo
+  {
+    border: 1px solid;
+    padding: 1px;
+    margin: 0 10px;
+  }
+  
+  /* Hover effect for customize div buttons */
+  #customizediv8 button:hover, #namecustomizediv8 button:hover, 
+  #schoolnamecustomizediv8 button:hover, #rollcustomizediv8 button:hover, 
+  #sectioncustomizediv8 button:hover, #classcustomizediv8 button:hover, 
+  #OD button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Additional styles for alignment and spacing if needed */
+  #customizediv8, #namecustomizediv8, #schoolnamecustomizediv8, 
+  #rollcustomizediv8, #sectioncustomizediv8, #classcustomizediv8, 
+  #OD {
+    padding: 15px;
+    border: 1px solid #ddd;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+    margin-top: 10px;
+  }
+  
+  /* Responsive adjustments for customize divs */
+  @media (max-width: 768px) {
+    #customizediv8, #namecustomizediv8, #schoolnamecustomizediv8, 
+    #rollcustomizediv8, #sectioncustomizediv8, #classcustomizediv8, 
+    #OD {
+  
+      padding: 10px;
+      font-size: 12px;
+    }
+    .personImage8 {
+      position: absolute ;
+      top: 43%;
+      left: 5%;
+      overflow:hidden;
+      transform: translate(-50%, -50%);
+      max-width: 28%;
+      max-height: 32%;
+      width:20% !important;
+      border:#000000 solid;
+      
+      }
+      
+  .studentname-lab8 { top: 33%; left: 56%;}
+  .schoolname-lab8 { top: 61%; left: 52%; }
+  .subjectname-lab8 { top: 51%; left: 56%; opacity:0 !important;}
+  
+  .sectionname-lab8 { top: 41%; left: 65%; width: 130px; }
+  .classname-lab8 { top: 41%; left: 52%; }
+  }
+  
+  
+  /* Font and quantity customization */
+  #font-color {
+    width: 20%;
+    align-self: center;
+    color: #0056b3;
+    font-weight: 600;
+  }
+  
+  #font-family {
+    color: #0056b3;
+    font-weight: 600;
+  }
+  
+  #type button {
+    width: 20%;
+    background-color: #ccc;
+    padding: 10px;
+  }
+  
+  #size {
+    padding: 7px;
+  }
+  
+  #size select {
+    padding: 10px; 
+  }
+  
+  #quantity {
+    padding: 5px 30px;
+    color: #0056b3;
+    font-weight: 600;
+    font-size: larger;
+  }
+  
+  /* Quantity input */
+  input[type="number"] {
+    width: 100px;
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 0 7px;
+    font-weight: 600;
+  }
+  
+  /* Add to cart and download buttons */
+  #add, #down {
+    width: 60%;
+  padding: 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #17b83a;
+  color: white;
+  font-size: 16px;
+  font-weight: 800;
+  cursor: pointer;
+  text-align: center;
+  align-self: center;
+  }
+  
+  #down {
+    background-color: #0056b3;
+  }
+  
+  #add:hover, #down:hover {
+    background-color: #000000;
+    color: #17b83a;
+    letter-spacing: 2px;
+    border-radius: 30px;
+  }
+  
+  /* WhatsApp button */
+  #whatsapp {
+    width: 70%;
+    align-self: center;
+    background-color: #0c0505;
+    font-size: medium;
+    font-weight: 600;
+    color: #ccc;
+  }
+  
+  #whatsapp-icon {
+    font-weight: 600;
+    font-size: 20px;
+    padding: 5px;
+    color: #17b83a;
+  }
+  
+  /* Price label */
+  #price {
+    display: block;
+    align-self: center;
+    width: 40%;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    border-radius: 30px;
+    padding: 10px;
+  }
+  
+  /* Sticker container */
+  .stickerdiv {
+    display: block;
+    height: 50%;
+    position: static;
+    margin-top: 20%;
+  }
+  
+  #goback {
+    padding: 10px;
+    background-color: #007bff;
+    border-radius: 20px;
+    color: white;
+    border: none;
+  }
+  
+  #goback:hover {
+    border: 1px solid gray;
+  }
+  
+  /* Responsive media queries */
+  @media (max-width: 1120px) {
+    .personalizecontainer {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .pers-img-cont, 
+    .controllize-container {
+      width: 100%;
+    }
+  
+    .pers-img-cont {
+      margin-bottom: 20px;
+    }
+    .studentname-lab8, .schoolname-lab8, .subjectname-lab8, 
+    .rollnu-lab8, .sectionname-lab8, .classname-lab8 {
+      font-size: 28px !important;
+    }
+    
+  .studentname-lab8 { top: 33%; left: 56%;}
+  .schoolname-lab8 { top: 61%; left: 52%; }
+  .subjectname-lab8 { top: 51%; left: 56%; }
+  .rollnu-lab8{top:10000px;}
+  .sectionname-lab8 { top: 41%; left: 65%; width: 130px; }
+  .classname-lab8 { top: 41%; left: 52%; }
+  }
+  
+  @media (max-width: 768px) {
+    .studentname-lab8, .schoolname-lab8, .subjectname-lab8, 
+    .rollnu-lab8, .sectionname-lab8, .classname-lab8 {
+      font-size: 28px !important;
+    }
+   
+  .studentname-lab8 { top: 33%; left: 56%;}
+  .schoolname-lab8 { top: 61%; left: 52%; }
+  .subjectname-lab8 { top: 51%; left: 56%; }
+  
+  .sectionname-lab8 { top: 41%; left: 65%; width: 130px; }
+  .classname-lab8 { top: 41%; left: 52%; }
+    #add, #down {
+      width: 80%;
+      font-size: 14px;
+    }
+  
+    #price {
+      width: 60%;
+      font-size: 16px;
+    }
+  
+  }
+  .rollnulabel8-style-2{top: 40% ;left: 87% ;}
+
+  @media (max-width: 480px) {
+    .personalizecontainer {
+      flex-direction: column;
+    }
+  
+    .pers-img-cont {
+      margin-bottom: 20px;
+      padding: 10px;
+    }
+  
+    .studentname-lab8, .schoolname-lab8, .subjectname-lab8, 
+    .rollnu-lab8, .sectionname-lab8, .classname-lab8 {
+      font-size: 15px !important;
+    }
+    
+  .studentname-lab8 { top: 33%; left: 56%;}
+  .schoolname-lab8 { top: 55% ; left: 52%; }
+  .subjectname-lab8 { top: 48%; left: 56%; }
+  
+  .sectionname-lab8 { top: 40%; left: 55%; width: 130px; }
+  .classname-lab8 { top: 40%; left: 52%; }
+    #add, #down {
+      font-size: 12px;
+      padding: 8px;
+    }
+  
+    #price {
+      font-size: 14px;
+    }
+    .personImage8 {
+      position: absolute ;
+      top: 31% !important;
+      left: 4% !important;
+      overflow:hidden;
+      transform: translate(-50%, -50%);
+      max-width: 28%;
+      max-height: 32%;
+      width:26% !important;
+      border:#000000 solid;
+      
+      }
+      .rollnulabel8-style-2{top: 40% ;left: 87% ;}
+
+      .namelabel8-style-3{top: 27% !important;left: 48% !important;}
+      .schoolnamelabel8-style-3{top:46% !important;left:47% !important}
+      .subjectnamelabel8-style-3{top:42% !important;left:58% !important}
+      .classnamelabel8-style-3{top: 33% !important;left:49% !important;}
+      .sectionnamelabel8-style-3{top:33% !important;left: 58% !important;}
+      .rollnulabel8-style-3{top: 53% !important;left: 53% !important;}
+      
+
+      .namelabel8-style-4{top: 30% !important;left: 48% !important;}
+      .schoollabel8-style-4{top:56% !important;left:47% !important}
+      .subjectnamelabel8-style-4{top:42% !important;left:58% !important}
+      .classnamelabel8-style-4{top: 40% !important;left:54% !important;}
+      .sectionnamelabel8-style-4{top:40% !important;left: 71% !important;}
+      .rollnulabel8-style-4{top: 100000% !important;left: 53% !important;}
+      
+
+      .namelabel8-style-5{top: 30% !important;left: 54% !important;}
+      .schoollabel8-style-5{top:57% !important;left:49% !important}
+      .subjectnamelabel8-style-5{top:42% !important;left:53% !important}
+      .classnamelabel8-style-5{top: 40% !important;left:54% !important;}
+      .sectionnamelabel8-style-5{top:40% !important;left: 70% !important;}
+      .rollnulabel8-style-5{top: 100000% !important;left: 53% !important;}
+       
+  }
+  
+  
+   
+  /* Container for all elements */
+  .persImgCont3 {
+  position: relative;
+  width: 100%; /* Adjust as needed */
+  height: auto; /* Adjust as needed */
+  }
+  
+  .personalise-Image3 {
+  position: relative;
+  z-index: 1;
+  width: 100%; /* Adjust as needed */
+  height: auto; /* Adjust as needed */
+  }
+  
+  /* Second Layer: Watermark Image */
+  .watermark8 {
+  position: absolute;
+  top: 26%;
+  left: 2%;
+  z-index: 2;
+  width: 100%; 
+  height: auto; 
+  opacity: 0.9; 
+  }
+  
+  /* Last Layer: Person Image and Labels */
+  .personImage8 {
+  position: absolute;
+  top: 33%;
+  left: 1.5%;
+  z-index: 3;
+  border: 2px solid black; /* Default, can be overridden by inline styles */
+  border-radius: 100%; /* Default, can be overridden by inline styles */
+  filter: brightness(100%) contrast(100%); /* Default, can be overridden by inline styles */
+  transform: scale(1) rotate(0deg) translate(0px, 0px) scaleX(1); /* Default, can be overridden by inline styles */
+  transition: transform 0.2s;
+  
+  
+  }
+  
+  /* Labels */
+  .studentname-lab8,
+  .schoolname-lab8,
+  .subjectname-lab8,
+  .rollnu-lab8,
+  .sectionname-lab8,
+  .classname-lab8 {
+  position: absolute;
+  z-index: 3;
+  color: black; /* Default, can be overridden by inline styles */
+  font-family: Arial, sans-serif; /* Default, can be overridden by inline styles */
+  transform: scale(1) rotate(0deg) translate(0px, 0px) scaleX(1); /* Default, can be overridden by inline styles */
+  transition: transform 0.2s;
+  }
+  
+  /* Example positioning for labels (adjust as needed) */
+ 
+

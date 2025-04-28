@@ -1,0 +1,231 @@
+/* .splash-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+ 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  pointer-events: none; 
+
+.splash-content {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  position: relative;
+  max-width: 90%;
+  width: 600px;
+  display: inline-block;
+  cursor: move;
+  pointer-events: none; 
+}
+
+.splash-content video,
+.splash-content .skip-button,.close-highlights {
+  pointer-events: auto; 
+}
+
+video {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.skip-button,.close-highlights {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background: #ff5733;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.skip-button:hover {
+  background: #e04b2c;
+}
+
+.video-thumbnail {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  width: 400px; 
+  height: 250px; 
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.thumbnail-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.overlay-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 20px;
+  color: white;
+  font-weight: bold;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.product-highlights {
+  position: relative;
+  
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  opacity: 1;
+  visibility: visible;
+}
+
+.product-highlights.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+ .close-highlights {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+}  */
+/* Ensure the splash overlay covers the entire viewport */
+.splash-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  pointer-events: none; /* Allow clicks to pass through */
+}
+
+/* Center the splash content and make it draggable */
+.splash-content {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  position: relative;
+  max-width: 90%;
+  width: 600px;
+  display: inline-block;
+  cursor: move;
+  touch-action: none;
+  pointer-events: auto; /* Make content interactive */
+}
+
+/* Style the video element to be responsive */
+.splash-content video {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* Style the skip and close buttons */
+.skip-button,
+.close-highlights {
+  margin: 0%;
+  padding: 10px 20px;
+  background: red;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  touch-action: manipulation;
+}
+
+.skip-button:hover,
+.close-highlights:hover {
+  background: red;
+}
+
+/* Style the video thumbnail container */
+.video-thumbnail {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  width: 100%;
+  max-width: 400px; /* Adjust as needed */
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* Ensure the thumbnail video covers the container */
+.thumbnail-video {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Overlay text on the video thumbnail */
+.overlay-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 20px;
+  color: white;
+  font-weight: bold;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+/* Style the product highlights section */
+.product-highlights {
+  position: relative;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  opacity: 1;
+  visibility: visible;
+  border: 2px solid gray;
+  border-radius: 2%;
+}
+
+/* Hide the product highlights when not visible */
+.product-highlights.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* Position the close button at the top-right corner */
+.close-highlights {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .splash-content {
+    width: 90%;
+    padding: 15px;
+  }
+
+  .skip-button,
+  .close-highlights {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+
+  .overlay-text {
+    font-size: 16px;
+    padding: 8px 16px;
+  }
+}

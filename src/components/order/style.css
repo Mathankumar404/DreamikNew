@@ -180,8 +180,7 @@ a {
   background: linear-gradient(
       rgba(226, 223, 223, 0.8),
       rgba(226, 223, 223, 0.8)
-    ),
-    url("./image/bg.png");
+    );
   background-size: cover;
   background-position: center;
   text-align: center;
@@ -457,13 +456,17 @@ footer h2{
 }
 #product-1 .pro .description i {
   font-size: 14px;
-  color: rgb(243, 181, 25);
+  color: rgb(243, 203, 25);
 }
-#product-1 .pro .description h4 {
+#product-1 .pro .description h3 {
   padding-top: 7px;
   font-size: 16px;
   font-weight: 700;
   color: rgb(51, 32, 126);
+}
+#pricetag
+{
+  color:darkgreen;
 }
 #product-1 .pro a i {
   width: 40px;

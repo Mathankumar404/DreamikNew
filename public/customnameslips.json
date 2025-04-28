@@ -1,0 +1,21 @@
+{
+    "name": "Custom NameSlip",
+    "source": "/image/DreamikAILabel-Rectangle-1080x1920px-HD-WhiteBK-BatmintonTheme-Type1-ImageLeft.png",
+    "price": 100,
+    "status": 1,
+    "props": [
+      "batminton",
+      "white",
+      "type1",
+      "image",
+      "left",
+      "5801f3",
+      "english"
+    ],
+    "small": 100,
+    "medium": 120,
+    "large": 160,
+    "jumbo": 180,
+    "glossy": 60,
+    "productcode": "5801f3"
+  }

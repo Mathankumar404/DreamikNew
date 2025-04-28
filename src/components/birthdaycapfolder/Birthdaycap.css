@@ -1,0 +1,315 @@
+.fullcontainer{
+    margin: 20px;
+    width: 100%;
+    height:36% ;
+    display: flex;
+    flex-direction: row;
+    border: 2px solid rgb(24, 212, 206);
+    background-color: #f9f7fd;
+    
+}
+
+.cap-container{
+    display: flex;
+    flex: 1;
+    position:relative;
+    width:100%;
+    height:100%
+    
+}
+.cap-bg{
+    position: relative;
+    width:80%;
+    height: 80%;
+    z-index: 1;
+}
+
+.cap-bg2{
+width: 100%;
+height: 100%;
+}
+
+.half-column2{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    flex: 1;
+}
+.user-img{
+    position:absolute;
+    top: 37%;
+    right: 50%;
+    width: 120px;
+    height: 120px;
+    transform: rotate(-35deg);
+    z-index: 0;
+}
+
+.selectimagediv{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    border: #2c3e50 2px solid;
+    width: 80%;
+    background-color: #f9f7fd;
+    padding: 20px;
+    margin-top: 20px;
+}
+.student-namecolumn{
+    margin-top: 20px;
+    justify-content: center;
+    align-items: center;
+    border: #2c3e50 2px solid;
+    width: 80%;
+    background-color: #f9f7fd;
+   padding: 20px;
+}
+.curved-name {
+    position: absolute;
+    top: 69%;
+    left: 31%;
+    transform: translateX(-50%);
+    transform: rotate(-33deg);
+    z-index: 3;
+    font-size: 14px;
+  }
+  .curved-name2 {
+    position: absolute;
+    top: 78%;
+    left: 31%;
+    transform: translateX(-50%);
+    transform: rotate(-3deg);
+    z-index: 3;
+    font-size: 14px;
+  }
+  .selectimagediv{
+    display: flex;
+  }
+ 
+
+  .student-name23 {
+    padding: 10px 15px;
+    border: 2px solid #39edf7;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    width: 250px;
+    background-color: #f9f7fd;
+    color: #2c3e50;
+    box-shadow: 0 4px 12px rgba(142, 68, 173, 0.2);
+    transition: all 0.3s ease;
+    outline: none;
+   
+  }
+  
+  .student-name::placeholder {
+    color: #aaa;
+    font-style: italic;
+  }
+  
+  .student-name:focus {
+    border-color: #9b59b6;
+    box-shadow: 0 0 10px rgba(155, 89, 182, 0.4);
+    background-color: #fff;
+  }
+  .curved-text {
+    position: absolute;
+    top: 5%; /* Adjust as needed */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px; /* Width of the arc */
+    height: 100px; /* Height of the arc */
+    pointer-events: none; /* Prevent interaction */
+    z-index: 3 ;
+  }
+  .curved-text span {
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    transform-origin: bottom center;
+    font-weight: bold;
+    font-size: 30px ;
+    color: #322d95;
+
+  }
+ 
+
+/* Wrapper container */
+.cap-slider-wrapper {
+  max-width: 500px;
+
+margin: 30px; 
+margin-left: 17%;
+ padding:2rem;
+}
+
+/* Base cap photo styling */
+.cap-photo {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out, border 0.3s ease;
+  margin: 0 10px;
+}
+
+.slick-slide > div {
+  padding: 0 10px;
+}
+/* Hover effect */
+.cap-photo:hover {
+  transform: scale(1.03);
+}
+
+/* Active (selected) state */
+.cap-photo--active {
+  border: 4px solid #007bff;
+  transform: scale(1.05);
+}
+
+/* Display selected cap URL */
+.active-cap-text {
+  margin-top: 1rem;
+  font-weight: bold;
+  color: #444;
+  text-align: center;
+}
+
+
+.forslider{
+  display: flex;
+  flex-direction: column;
+  display: flex;
+    flex: 1;
+    position: relative;
+    width: 80%;
+    height: 80%;
+}
+
+.user-img2{
+  top: 49%;
+    right: 45%;
+    width: 90px ;
+    height: 90px ;
+    transform: rotate(-10deg) ;
+}
+
+.samplecollections{
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+
+}
+.selectedsample:hover{
+  transform: scale(1.05);
+}
+.samplecollections.selectedsample {
+  border: 5px solid #4caf50; /* Green border for selected */
+  box-shadow: 0 0 10px rgba(76, 175, 80, 0.5);
+  transform: scale(1.1);
+}
+  @media(max-width:480px){
+    .forslider{
+      display: flex;
+      flex-direction: column;
+      display: flex;
+        flex: 1;
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+    .cap-slider-wrapper {
+      max-width: 500px;
+    margin: 30px; 
+     padding:2rem;
+    }
+    .cap-slider-wrapper div img {
+      max-width: 200px;
+      
+    }
+    
+    .cap-container{
+        position:relative;
+        width:100%;
+        height:30%;
+    }
+    .cap-bg{
+        position: relative;
+        width:90%;
+        height: 100%;
+        z-index: 1;
+    }
+    .user-img{
+        position:absolute;
+        top: 34%;
+        right: 43%;
+        width: 70px;
+        height: 70px;
+        transform: rotate(-35deg);
+        z-index: 0;
+    }
+    .fullcontainer{
+        width:90%;
+        height: 40%;
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        border: 2px solid black;
+        background-color: #f9f7fd;
+    }
+    .cap-container{
+        position:relative;
+        width:95%;
+        height:95%
+    }
+
+    .half-column2{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+    .curved-name {
+        top: 60%;
+        left: 28%;
+        transform: rotate(-40deg);
+        font-size: 2px !important ;
+        width: 160px; /* Adjust width for mobile */
+        height: 60px;
+      }
+      .curve-path {
+        stroke-width: 17; /* Adjust stroke width for mobile */
+    }
+    .user-img2{
+      top: 49%;
+        right: 49%;
+        width: 50px ;
+        height: 50px ;
+        transform: rotate(-10deg) ;
+    }
+  
+    .curved-name2 {
+      position: absolute;
+      top: 69%;
+      left: 26%;
+      transform: translateX(-40%);
+      transform: rotate(-20deg);
+      z-index: 3;
+      font-size: 8px;
+      width: 120px;
+    }
+    .curve-path2{
+      stroke-width: 17;
+    }
+    .samplecollections{
+      width: 50px;
+      height: 50px;
+      margin: 10px;
+
+    }
+  }
+
+ 

@@ -1,0 +1,97 @@
+/* Order Confirmation Page */
+.order-confirmation {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  font-family: Arial, sans-serif;
+}
+
+.order-confirmation h1, h2 {
+  text-align: center;
+  color: #333;
+  margin: 10px 0;
+}
+.order-confirmation h1{
+  font-size: 33px;
+  margin-bottom: 15px;
+}
+.order-confirmation p {
+  font-size: 14px;
+  color: #555;
+  margin: 10px 0;
+}
+#thank
+{
+  color: #08661d;
+  font-size: larger;
+  margin: 15px 0;
+}
+
+/* Invoice Header */
+.invoice-details {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 10px 5px;
+  border-bottom: 2px solid #ddd;
+  margin-bottom: 15px;
+}
+
+/* Order Summary */
+.order-summary {
+  padding: 15px;
+  border-bottom: 2px solid #ddd;
+  margin-bottom: 15px;
+}
+
+.order-summary ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.order-summary li {
+  padding: 5px 0;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 10px;
+}
+
+/* Payment and Delivery Details */
+.payment-details, .delivery-details {
+  padding: 15px;
+  border-bottom: 2px solid #ddd;
+  margin-bottom: 15px;
+}
+
+/* Buttons */
+.order-confirmation button {
+  display: block;
+  width: 70%;
+  padding: 20px;
+  margin: 10px auto;
+  font-size: 16px;
+  color: white;
+  background: #007bff;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+  justify-self: center;
+}
+
+button:hover {
+  background: #0056b3;
+}
+.sendwa {
+  background: #218838;
+}
+
+.back-to-home {
+  background: #a74628;
+}
+
+.back-to-home:hover {
+  background: #218838;
+}

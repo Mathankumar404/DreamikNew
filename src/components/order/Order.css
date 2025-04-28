@@ -1,227 +1,596 @@
-/* General Layout */
+body{
+  overflow: hidden;
+}
 #container {
+  width: 75vw;
   display: flex;
-  justify-content: space-between;
-  padding: 20px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
 }
-
-#container #product-display {
-  width: 45%;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-#container .product-container {
+#product-display {
+  width: 40%;
   display: flex;
   flex-direction: column;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 15px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  justify-content: start;
+  align-items: center;
+}
+.product-container {
+  width: 80%;
+  margin: 30px;
+  margin-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1),
+    /* Bottom shadow */ 0px -4px 6px rgba(0, 0, 0, 0.1),
+    /* Top shadow */ 4px 0px 6px rgba(0, 0, 0, 0.1),
+    /* Right shadow */ -4px 0px 6px rgba(0, 0, 0, 0.1); /* Left shadow */
+  padding: 10px;
 }
 
-#container .prod-image {
-  max-width: 100%;
-  height: auto;
-  margin-bottom: 10px;
+.prod-image {
+  width: 100%;
 }
 
-#container .prod-name,
-#container .prod-price,
-#container .prod-qtn,
-#container .prod-type,
-#container .prod-sheet {
-  margin: 5px 0;
+.prod-name,
+.prod-price,
+.prod-type,
+.prod-qtn,
+.prod-sheet {
+  font-size: 14px;
+  color: black;
+  /* margin: -15px 0px; */
+  margin-left: 5px;
+  padding: 0px;
+  line-height: 20px;
 }
 
-#container .prod-remove {
-  margin-top: 10px;
-  padding: 8px 12px;
-  background-color: #ff4d4d;
+.prod-sheet {
+  margin-top: 5px;
+}
+
+.prod-remove {
+  width: 100px;
+  height: 30px;
+  background-color: rgb(227, 34, 34);
   color: white;
-  border: none;
   border-radius: 4px;
-  cursor: pointer;
+  border: 1px white;
+  margin-top: 20px;
 }
-
-#container .prod-remove:hover {
-  background-color: #e63939;
-}
-
-#container #addprod {
-  padding: 10px 15px;
-  background-color: #007bff;
+.prod-edit {
+  width: 100px;
+  height: 30px;
+  background-color: rgb(11, 109, 195);
   color: white;
-  border: none;
+  border-radius: 4px;
+  border: 1px white;
+  margin-top: 20px;
+}
+.prod-remove:hover {
+  transform: scale(1.1);
+
+  background-color: rgb(227, 34, 34);
+}
+.prod-edit:hover {
+  transform: scale(1.1);
+
+  background-color: rgb(11, 109, 195);
+}
+#addprod {
+  width: 200px;
+  height: 35px;
+  background-color: green;
   border-radius: 5px;
+  font-size: 18px;
+  color: white;
+}
+
+#addprod:hover {
+  transform: scale(1.1);
+}
+
+.topic {
+  font-size: 1.5rem;
+  color: #343a40;
+  margin-bottom: 2px;
+  margin-top: 15px;
+  padding-left: 10px;
+}
+
+#options {
+  display: flex;
+  flex-direction: row;
+  width: 900px;
+}
+/* #selectop{
+  border: 1px solid;
+} */
+.mode {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.mode > label > input {
+  margin: 4px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.mode > label {
+  margin: 2px;
+  margin-right: 10px;
+  font-weight: 600;
+  display: flex;
+  /* flex-wrap: wrap; */
+  align-items: center;
+  width: 200px;
+ height: 3rem;
+  background-color: #e9ecef;
+  font-size: larger !;
+  border-radius: 12px;
   cursor: pointer;
-  align-self: center;
+  transition: background 0.3s ease, transform 0.2s;
 }
 
-#container #addprod:hover {
-  background-color: #0056b3;
+#reseller_selection {
+  margin: 20px;
 }
 
-/* User Details */
-#container #user-details {
-  width: 50%;
+#prices1 {
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  padding: 10px;
-  box-sizing: border-box; /* Ensures padding is included in width calculation */
+  flex-wrap: wrap;
 }
 
-#container #options {
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  box-sizing: border-box;
+#prices1 > h3 {
+  margin: 10px;
+  font-weight: 600;
 }
 
-#container #delivery {
-  width: auto;
-  padding: 10px;
-  box-sizing: border-box;
-  background-color: whitesmoke;
+/* #prices > h3 > span {
+  color: #0006b3;
+} */
+#user-details {
+  width: 60%;
 }
-
-#container #delivery label {
-  padding: 10px;
-  display: block; /* Ensures labels occupy their space properly */
-  font-size: 14px; /* Slightly smaller font for a clean layout */
-}
-
-#container #price {
-  width: auto;
-  height: fit-content;
-  display: block;
+#form-container,
+#delivery,
+#prices1 {
+  width: 90%;
+  margin: auto;
   padding: 20px;
-  background-color: #f8f9fa; /* Light background color */
-  border-radius: 8px; /* Rounded corners */
-  border: 1px solid #ddd; /* Lighter border for distinction */
-  color: #111813; /* Text color */
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: #f9f9f9;
+  margin: 10px;
 }
-
-#container #price .topic {
-  font-size: 20px;
-  font-weight: bold;
-  margin-bottom: 15px; /* Space between title and payment details */
+#delivery-charge,
+#delivery-charge-h3 {
+  font-size: 16px;
 }
-
-#container #price h3 {
-  font-size: 16px; /* Font size for payment details */
-  margin-bottom: 10px; /* Space between each line */
-  color: #111813; /* Text color */
-}
-
-#container #price #delivery-charge-h3 {
-  color: #28a745; /* Green color for delivery and CoD charges */
-}
-#container #price #cod-charge-h3{
+#cod-charge-h3 {
   display: none;
-}
-
-#container #price h3:last-child {
-  font-weight: bold;
-  color: #007bff; /* Blue color for total payment */
-}
-
-#container #price .price-detail {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 10px;
-}
-
-#container #price .price-detail span {
   font-size: 16px;
 }
 
-
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  #container #user-details {
-    width: 100%; /* Adjust to full width on smaller screens */
-    padding: 10px;
-  }
-
-  #container #options {
-    flex-direction: column; /* Stack options vertically */
-    gap: 15px; /* Reduce gap slightly for better compactness */
-  }
-
-  #container #delivery,
-  #container #price {
-    width: 100%; /* Full width for individual sections */
-    text-align: left; /* Align text to the left */
-  }
-
-  #container #price {
-    background-color: #e9f7e7; /* Light green background for price section */
-    color: #1b3020; /* Keep the green text for consistency */
-  }
+#forselect {
+  width: 180px;
+  height: 30px;
+  font-size: 16px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-weight: 500;
+  box-shadow: inset 0px 1px 2px rgb(209, 209, 252);
 }
-
-
-/* Form Container */
-#container #form-container {
-  margin-top: 20px;
-  padding: 20px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  text-align: center;
+#forselect1 {
+  width: 180px;
+  height: 30px;
+  font-size: 16px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-weight: 500;
+  box-shadow: inset 0px 1px 2px rgb(209, 209, 252);
 }
-
-#container #address-form label {
+#form-container label {
   display: block;
-  margin: 10px 0 5px;
+  margin-bottom: 5px;
+  font-weight: bold;
 }
 
-#container #address-form input {
+#form-container input {
   width: 100%;
-  padding: 10px;
+  padding: 8px;
   margin-bottom: 15px;
   border: 1px solid #ccc;
   border-radius: 5px;
+  box-shadow: inset 0px 2px 6px rgb(209, 209, 252);
 }
 
-#container #proceedtopay {
-  padding: 12px 20px;
-  background-color: #28a745;
-  color: white;
+#form-container button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
   border: none;
   border-radius: 5px;
+  font-size: 16px;
   cursor: pointer;
 }
 
-#container #proceedtopay:hover {
-  background-color: #218838;
+#form-container button:hover {
+  background-color: #0056b3;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
+#coupon {
+  width: 260px;
+  height: 30px;
+  margin: 5px;
+  padding: 8px;
+  border: 1px solid #444343;
+  border-radius: 5px;
+  box-shadow: inset 0px 2px 6px rgb(209, 209, 252);
+  font-size: 15px;
+}
+
+#submitcoupon {
+  width: 150px;
+  height: 35px;
+  margin: 5px;
+  background-color: #20b2aa;
+  color: white;
+  font-size: 17px;
+  text-align: center;
+  border-radius: 5px;
+}
+#delivery {
+  width: 60%;
+}
+#prices1 {
+  width: 35%;
+}
+#message {
+  font-size: 15px;
+}
+#partial,
+#cod1 {
+  display: none;
+}
+
+#address-form-reseller {
+  display: none;
+}
+
+@media screen and (max-width: 500px) {
   #container {
     flex-direction: column;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
   }
-
-  #container #product-display,
-  #container #user-details {
-    width: 100%;
+  #product-display {
+    width: 95%;
   }
-
-  #container #options {
-    flex-direction: column;
+  #user-details {
+    width: 95%;
+    margin-left: 10px;
   }
+  #options {
+    display: grid !important;
+    width: 400px;
+    grid-template-columns: repeat(1, 1fr);
+    margin-top: 40px;
+    justify-content: center;
+    align-items: center;
+  }
+  #delivery,
+  #prices1 {
+    width: 80%;
+  }
+  #prices1 > h3 {
+    font-size: 15px;
+  }
+  .mode > label {
+    font-size: 15px;
+  }
+  .prod-name,
+  .prod-price,
+  .prod-type,
+  .prod-qtn,
+  .prod-sheet {
+    margin: 0px;
+  }
+}
 
-  #container #delivery,
-  #container #price {
-    width: 100%;
-    text-align: left;
+.astrics {
+  color: red;
+  font-size: 20px;
+}
+/* Error Overlay */
+.error-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(5px);
+  z-index: 999;
+}
+
+/* Error Popup */
+.error-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #ffffff;
+  color: #333;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  width: 85%;
+  max-width: 380px;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Close Button */
+.error-close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: none;
+  border: none;
+  color: #888;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.error-close {
+  color: #ff4d4d;
+}
+
+/* Button */
+.error-button {
+  background-color: #ff4d4d;
+  color: #fff;
+  padding: 12px 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px;
+  transition: 0.2s ease;
+}
+
+.error-button:hover {
+  background-color: #d62828;
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -55%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  #options {
+    display: grid;
+  }
+  /* #prices1 {
+    width: 60%;
+  } */
+  #user-details {
+    /* width: 80%; */
+  }
+  #form-container {
+    width: 86%;
+  }
+  
+}
+/* Main Container */
+.toggle-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* Switch Label */
+.toggle-label {
+  min-width: 60px;
+  text-align: center;
+}
+
+/* Toggle Switch */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 30px;
+}
+
+/* Hide Default Checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* Slider Track */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.3s;
+  border-radius: 30px;
+}
+
+/* Small Circle Inside the Switch */
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 22px;
+  width: 22px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.3s;
+  border-radius: 50%;
+}
+
+/* When switch is ON (Instant selected) */
+input:checked + .slider {
+  background-color: #4caf50;
+}
+
+input:checked + .slider:before {
+  transform: translateX(30px);
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateY(1px);
+  }
+  50% {
+    transform: translateX(1px);
+  }
+  75% {
+    transform: translateX(-1px);
+  }
+}
+
+.shake {
+  animation: shake 0.5s infinite;
+}
+
+.coupon-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  background-color: #ff9800;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.coupon-button:hover {
+  background-color: #e68900;
+}
+.coupon-container {
+  background-color: #f8f9fa; /* Light grey background */
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-top: 10px;
+  text-align: center;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+/* Hover effect for the entire container */
+.coupon-container:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.coupon-container h2 {
+  color: #333;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+/* Coupon option styling */
+.coupon-container h4 {
+  color: #fff;
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: #1377e3;
+  padding: 10px 15px;
+  border-radius: 6px;
+  margin: 8px auto;
+  display: inline-block;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease-in-out;
+
+  text-align: center;
+}
+
+/* Hover effect for the coupon */
+.coupon-container h4:hover {
+  background-color: #0f5cbf; /* Darker blue */
+  transform: scale(1.05);
+}
+
+/* Active (clicked) effect */
+.coupon-container h4:active {
+  background-color: #0d4aa3; /* Even darker blue */
+  transform: scale(0.95);
+}
+
+/* Selected coupon effect (optional) */
+.coupon-container h4.selected {
+  background-color: #b9101b; /* Green when selected */
+  color: #fff;
+}
+
+.floating-user-box {
+  background: linear-gradient(135deg, #6a11cb, #2575fc); /* Gradient effect */
+  color: white;
+  padding: 15px 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3); /* Stronger shadow */
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  min-width: 150px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.offer-banner {
+  background: linear-gradient(90deg, #6a74f7, #3746ec, #0c09db );
+  background-size: 200% auto;
+  color: rgb(255, 255, 255);
+  padding: 16px 30px;
+  margin: 20px auto;
+  font-size: 1.3rem;
+  font-weight: 700;
+  border-radius: 10px;
+  text-align: center;
+  animation: breatheGradient 3s ease-in-out infinite;
+  width: fit-content;
+}
+
+@keyframes breatheGradient {
+  0% {
+    background-position: 0% center;
+  }
+  50% {
+    background-position: 100% center;
+  }
+  100% {
+    background-position: 0% center;
   }
 }

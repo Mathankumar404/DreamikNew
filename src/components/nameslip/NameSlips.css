@@ -1,0 +1,194 @@
+.studentname4 {
+  position: absolute;
+  top: -4%;
+  left: 170%;
+  font-weight: bolder;
+  white-space: nowrap;
+}
+
+.schoolname4 {
+  position: absolute;
+  top: 21%;
+  right: -270%;
+  width: 190%;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  font-weight: bolder;
+}
+.classname4 {
+  position: absolute;
+  top: 3.5%;
+  left: 170%;
+  font-weight: bolder;
+}
+.sectionname4 {
+  position: absolute;
+  top: 3.5%;
+  left: 300%;
+  font-weight: bolder;
+}
+
+.selectedimage4 {
+  position: absolute;
+  width: 120px;
+  height: 110px;
+  top: -10px;
+  left: 12px;
+}
+.selectedimage8 {
+  width: 140px;
+  height: 95px;
+  top: -10px;
+  left: 12.5px;
+}
+.selectedimage12{
+  left: 261% ;
+  top: -5% ;
+  width: 93% !important;
+  height: 37% ;
+  border-radius: 17px !important;
+
+ }
+.studentname8 {
+  top: -5%;
+  left: 220%;
+}
+
+.schoolname8 {
+  top: 18%;
+  right: -276%;
+}
+.classname8 {
+  top: 3%;
+  left: 180%;
+}
+.sectionname8 {
+  top: 3%;
+  left: 265%;
+}
+.studentname12 {
+  top: 0%;
+  left: 75%;
+}
+
+.schoolname12 {
+  top: 23%;
+  left: 90%;
+}
+.classname12 {
+  top: 8%;
+  left: 80%;
+}
+.sectionname12 {
+  top: 8%;
+  left: 190%;
+}
+@media (max-width: 480px) {
+  .studentname4 {
+    position: absolute;
+    top: -5%;
+    left: 130%;
+    font-weight: bolder;
+  }
+
+  .schoolname4 {
+    top: 16%;
+    right: -270%;
+    width: 190%;
+  }
+  .classname4 {
+    top: 3%;
+    left: 170%;
+  }
+  .sectionname4 {
+    top: 3%;
+    left: 300%;
+  }
+  .selectedimage4 {
+    width: 120px;
+    height: 80px;
+    top: -10px;
+    left: 10px;
+  }
+  .selectedimage8 {
+    width: 137px;
+    height: 65px;
+    top: -5px;
+    left: 12px;
+  }
+  .selectedimage12{
+    left: 262% ;
+    top: -4% ;
+    width: 85% !important;
+    height: 27% ;
+    border-radius: 10px !important;
+   }
+  .studentname8,
+  .schoolname8,
+  .classname8,
+  .sectionname8,
+  .sectionname4,
+  .classname4,
+  .studentname4,
+  .schoolname4,
+  .sectionname12,
+  .classname12,
+  .studentname12,
+  .schoolname12
+   {
+    font-weight: bolder;
+    font-size: small;
+  }
+
+  .studentname8 {
+    top: -6%;
+    left: 220%;
+    font-size: 12px;
+  }
+
+  .schoolname8 {
+    top: 13%;
+    right: -270%;
+  }
+  .classname8 {
+    top: 1%;
+    left: 190%;
+  }
+  .sectionname8 {
+    top: 1%;
+    left: 280%;
+  }
+
+  .studentname12 {
+    top: -2%;
+    left: 75%;
+  }
+  
+  .schoolname12 {
+    top: 19%;
+    left: 90%;
+  }
+  .classname12 {
+    top: 6%;
+    left: 100%;
+  }
+  .sectionname12 {
+    top: 6%;
+    left: 205%;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: white !important;
+    color: black !important;
+  }
+
+ .pro-container label  {
+    color: rgb(0, 0, 128) !important;
+  }
+}
